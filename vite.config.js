@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
         '@icons': path.resolve(__dirname, './src/assets/icons')
       }
     },
-    base: isProduction ? '/MetaDoc-Releases/' : '/',
+    base: isProduction ? '/metadoc-website/' : '/',
     build: {
       outDir: 'dist',
       assetsDir: 'assets'
