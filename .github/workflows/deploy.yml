@@ -22,6 +22,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: List directory structure
+        shell: bash
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Directory contents:"
+          ls -la
+          if [ -d "website" ]; then
+            echo "website directory exists"
+            ls -la website/
+          else
+            echo "website directory does not exist, checking if we're already in website"
+            if [ -f "package.json" ]; then
+              echo "package.json found in root, we're in website directory"
+            fi
+          fi
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -39,24 +56,49 @@ jobs:
           key: ${{ runner.os }}-npm-${{ hashFiles('website/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-npm-
+        continue-on-error: true
 
       - name: Install dependencies
-        working-directory: website
-        run: npm ci
+        shell: bash
+        run: |
+          if [ -d "website" ]; then
+            cd website
+          elif [ ! -f "package.json" ]; then
+            echo "Error: Neither website directory nor package.json found in root"
+            exit 1
+          fi
+          npm ci
 
       - name: Build
-        working-directory: website
-        run: npm run build
+        shell: bash
+        run: |
+          if [ -d "website" ]; then
+            cd website
+          fi
+          npm run build
         env:
           NODE_ENV: production
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Determine dist path
+        id: distpath
+        shell: bash
+        run: |
+          if [ -d "website/dist" ]; then
+            echo "path=website/dist" >> $GITHUB_OUTPUT
+          elif [ -d "dist" ]; then
+            echo "path=dist" >> $GITHUB_OUTPUT
+          else
+            echo "Error: dist directory not found"
+            exit 1
+          fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: website/dist
+          path: ${{ steps.distpath.outputs.path }}
 
   deploy:
     environment:
