@@ -1,0 +1,255 @@
+{
+  "hero": {
+    "title": "MetaDoc",
+    "subtitle": "Intelligent Text Processing Software Based on LLM Agent",
+    "description": "A versatile intelligent document processing platform for students and IT professionals",
+    "download": "Download Now",
+    "learnMore": "Learn More"
+  },
+  "features": {
+    "title": "Features",
+    "subtitle": "Powerful features to make document processing easier",
+    "docEdit": {
+      "title": "Document Editing",
+      "desc": "Support Markdown and LaTeX editing with real-time preview and syntax highlighting"
+    },
+    "ai": {
+      "title": "AI Intelligence",
+      "desc": "Multi-agent system based on LLM Agent, RAG knowledge base, intelligent dialogue and proofreading"
+    },
+    "export": {
+      "title": "Multi-format Export",
+      "desc": "Support export to MD, HTML, DOCX, PDF, TEX and other formats"
+    },
+    "visualization": {
+      "title": "Data Visualization",
+      "desc": "Professional chart drawing including UML, flowcharts, mind maps, word clouds"
+    }
+  },
+  "highlights": {
+    "title": "Core Highlights",
+    "intelligent": {
+      "title": "Intelligent",
+      "desc": "Multi-agent architecture based on LLM Agent for precise context analysis and deep proofreading"
+    },
+    "efficient": {
+      "title": "Efficient",
+      "desc": "Support AI concurrent task processing, can generate large amounts of content in a short time"
+    },
+    "professional": {
+      "title": "Professional",
+      "desc": "Native support for professional charts such as UML, mind maps, flowcharts"
+    },
+    "compatible": {
+      "title": "Compatible",
+      "desc": "Support Markdown, LaTeX and other document formats, compatible with multiple operating system platforms"
+    }
+  },
+  "download": {
+    "title": "Download MetaDoc",
+    "subtitle": "Choose the version that suits you",
+    "latest": "Latest Version",
+    "version": "Version",
+    "releaseDate": "Release Date",
+    "download": "Download",
+    "github": "GitHub Repository",
+    "steam": "Steam Store",
+    "comingSoon": "Coming Soon",
+    "loading": "Loading...",
+    "error": "Failed to load",
+    "systemRequirement": "System Requirements: 64-bit Windows 10 or later"
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "mock": "UI Preview",
+    "download": "Download",
+    "about": "About",
+    "language": "Language"
+  },
+  "footer": {
+    "description": "Intelligent text processing software based on LLM Agent",
+    "links": {
+      "github": "GitHub",
+      "steam": "Steam",
+      "docs": "Documentation"
+    },
+    "copyright": "© 2026 MetaDoc. All rights reserved."
+  },
+  "about": {
+    "appName": "MetaDoc",
+    "version": "Version",
+    "releaseDate": "Release Date",
+    "buildEnvironment": "Build Environment",
+    "buildEnvironmentDev": "Development",
+    "buildEnvironmentRelease": "Release",
+    "updateSettings": "Update Settings",
+    "autoCheckUpdates": "Auto Check Updates",
+    "updateChannel": "Update Channel",
+    "channelRelease": "Release",
+    "channelDev": "Development",
+    "checkUpdate": "Check for Updates",
+    "checking": "Checking...",
+    "updateAvailable": "Update Available",
+    "updateAvailableDesc": "New version available: {version}",
+    "noUpdate": "Up to Date",
+    "noUpdateDesc": "You are using the latest version",
+    "checkUpdateError": "Failed to check for updates",
+    "openSourceLicenses": "Open Source Licenses",
+    "thirdPartyAssets": "Third Party Assets"
+  },
+  "mock": {
+    "title": "UI Preview",
+    "subtitle": "Experience MetaDoc's modern interface design",
+    "leftMenu": {
+      "file": "File",
+      "fileTooltip": "File Operations",
+      "new": "New",
+      "open": "Open",
+      "saveAll": "Save All",
+      "save": "Save",
+      "saveAs": "Save As",
+      "export": "Export",
+      "closeFile": "Close File",
+      "aiAssistant": "AI Assistant",
+      "aiToolTooltip": "AI Tools",
+      "chatWithAI": "Chat with AI",
+      "handwritingFormulaRecognition": "Handwriting Formula Recognition",
+      "smartDrawingAssistant": "Smart Drawing Assistant",
+      "dataAnalysis": "Data Analysis",
+      "ocr": "OCR Recognition",
+      "attachment": "Attachment Management",
+      "settings": "Settings",
+      "recentFiles": "Recent Files",
+      "recentFilesTooltip": "Recently opened files",
+      "langTooltip": "Language",
+      "knowledgeBase": "Knowledge Base",
+      "workspaceExplorer": "Workspace Explorer",
+      "home": "Home",
+      "exit": "Exit",
+      "exitTooltip": "Exit Application",
+      "saveAndExit": "Save and Exit",
+      "saveAllAndExit": "Save All and Exit",
+      "exitWithoutSaving": "Exit Without Saving"
+    },
+    "viewMenu": {
+      "home": "Home",
+      "editor": "Editor",
+      "outline": "Outline",
+      "visualize": "Visualize",
+      "agent": "Agent",
+      "proofread": "Proofread"
+    },
+    "bottomMenu": {
+      "versionTooltip": "Version Info",
+      "wordCount": "Word Count",
+      "currentFile": "Current File: ",
+      "newFile": "New File",
+      "logConsoleTooltip": "Log Console",
+      "logConsoleLabel": "Log",
+      "notificationTooltip": "Notifications",
+      "notificationEmpty": "No Notifications",
+      "aiTaskQueueTooltip": "AI Task Queue",
+      "aiTaskQueueLabel": "AI Tasks"
+    },
+    "tabs": {
+      "untitled": "Untitled",
+      "home": "Home",
+      "example": "Example Document"
+    },
+    "dummy": {
+      "description": "To use the full features, please experience in the software. Download MetaDoc to start using all features.",
+      "download": "Download MetaDoc"
+    },
+    "exampleContent": {
+      "title": "MetaDoc - Intelligent Text Processing Software",
+      "subtitle": "MetaDoc is an intelligent text processing software based on LLM Agent, designed for students and IT professionals. It's not just an editor, but a powerful document creation and knowledge management platform.",
+      "architectureTitle": "System Architecture Overview",
+      "architectureDesc": "MetaDoc adopts a modern layered architecture design to ensure system scalability and maintainability. The following is the overall architecture diagram:",
+      "highlightsTitle": "Core Highlights",
+      "intelligentTitle": "Intelligent Document Processing",
+      "intelligentDesc": "MetaDoc adopts an advanced **multi-agent architecture** that can understand document context and provide accurate content suggestions and deep proofreading. Whether it's academic papers, technical documents, or daily notes, MetaDoc can help you improve writing efficiency.",
+      "intelligentFeatures": "**Main Features:**",
+      "intelligentFeature1": "🤖 **AI Smart Completion**: Context-based intelligent content generation",
+      "intelligentFeature2": "📝 **Deep Proofreading**: Not just spell checking, but also optimizing expression and logic",
+      "intelligentFeature3": "💡 **Smart Suggestions**: Real-time writing suggestions and content optimization",
+      "visualizationTitle": "Powerful Visualization Capabilities",
+      "visualizationDesc": "MetaDoc natively supports various professional charts, making your documents more vivid and professional.",
+      "mermaidGanttTitle": "Mermaid Gantt Chart",
+      "mermaidGanttDesc": "Use Mermaid to create beautiful project progress Gantt charts, showcasing MetaDoc's development roadmap:",
+      "echartsTitle": "ECharts Data Visualization",
+      "echartsDesc": "Use ECharts to create beautiful data charts, showcasing project feature usage:",
+      "plantumlClassTitle": "PlantUML UML Class Diagram",
+      "plantumlClassDesc": "Use PlantUML to draw professional UML class diagrams, showcasing core class design:",
+      "textStylesTitle": "Rich Text Styles",
+      "textStylesDesc": "MetaDoc supports rich Markdown syntax and LaTeX mathematical formulas, making your documents more professional.",
+      "codeHighlightTitle": "Code Highlighting",
+      "codeHighlightDesc": "Support syntax highlighting for multiple programming languages:",
+      "latexTitle": "LaTeX Mathematical Formulas",
+      "latexDesc": "Support inline and block-level formulas:",
+      "latexInlineExample": "Inline formula example: $E = mc^2$, this is Einstein's mass-energy equation.",
+      "latexBlockExample": "Block-level formula example:",
+      "latexComplexExample": "Complex formula example:",
+      "latexMatrixExample": "Matrix example:",
+      "formatSupportTitle": "Multi-format Support",
+      "formatSupportDesc": "MetaDoc supports multiple document formats to meet different scenario needs:",
+      "formatMarkdown": "**Markdown**",
+      "formatMarkdownUse": "Daily documents, blog posts",
+      "formatLatex": "**LaTeX**",
+      "formatLatexUse": "Academic papers, technical reports",
+      "formatText": "**Plain Text**",
+      "formatTextUse": "Code, configuration files",
+      "featuresTitle": "Practical Features",
+      "feature1Title": "1. Real-time Preview",
+      "feature1Desc": "When writing documents, the right side displays rendering effects in real-time, WYSIWYG.",
+      "feature2Title": "2. Outline Navigation",
+      "feature2Desc": "Automatically extract document outline, quickly jump to any section. Support drag-and-drop to adjust section order.",
+      "feature3Title": "3. Multi-tabs",
+      "feature3Desc": "Manage multiple documents like a browser, switch easily, improve work efficiency.",
+      "feature4Title": "4. Theme Switching",
+      "feature4Desc": "Support light and dark themes, protect your eyes, adapt to different usage scenarios.",
+      "scenariosTitle": "Use Cases",
+      "scenario1": "📖 **Academic Writing**: Papers, reports, research notes",
+      "scenario2": "💻 **Technical Documentation**: API docs, development manuals, technical blogs",
+      "scenario3": "📝 **Daily Notes**: Study notes, meeting records, to-do lists",
+      "scenario4": "🎓 **Education & Training**: Course materials, teaching slides, student assignments",
+      "whyTitle": "Why Choose MetaDoc?",
+      "why1": "1. **🚀 Efficient & Convenient**: AI-assisted writing, greatly improving creation efficiency",
+      "why2": "2. **🎨 Professional & Beautiful**: Rich charts and styles, making documents more professional",
+      "why3": "3. **🔒 Secure & Reliable**: Local storage, data security guaranteed",
+      "why4": "4. **🌍 Cross-platform**: Support Windows, macOS, Linux",
+      "futureTitle": "Future Outlook",
+      "futureDesc": "MetaDoc will continue to optimize and update, and will support in the future:",
+      "future1": "- 🌐 Cloud sync functionality",
+      "future2": "- 👥 Multi-user collaborative editing",
+      "future3": "- 📱 Mobile applications",
+      "future4": "- 🔌 More plugin extensions",
+      "footer": "**Start using MetaDoc and experience the charm of intelligent document processing!** 🎉",
+      "footerNote": "*This document is written using MetaDoc, showcasing its powerful features and beautiful chart support.*",
+      "outline": {
+        "title": "MetaDoc - Intelligent Text Processing Software",
+        "architecture": "System Architecture Overview",
+        "highlights": "Core Highlights",
+        "intelligent": "Intelligent Document Processing",
+        "visualization": "Powerful Visualization Capabilities",
+        "mermaidGantt": "Mermaid Gantt Chart",
+        "echarts": "ECharts Data Visualization",
+        "plantumlArchitecture": "PlantUML System Architecture Diagram",
+        "plantumlClass": "PlantUML UML Class Diagram",
+        "textStyles": "Rich Text Styles",
+        "codeHighlight": "Code Highlighting",
+        "latex": "LaTeX Mathematical Formulas",
+        "formatSupport": "Multi-format Support",
+        "features": "Practical Features",
+        "realtimePreview": "Real-time Preview",
+        "outlineNav": "Outline Navigation",
+        "multiTabs": "Multi-tabs",
+        "themeSwitch": "Theme Switching",
+        "scenarios": "Use Cases",
+        "why": "Why Choose MetaDoc?",
+        "future": "Future Outlook"
+      }
+    }
+  }
+}
+

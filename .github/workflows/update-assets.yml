@@ -1,0 +1,52 @@
+name: Update License Files
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 每天UTC 0点（北京时间8点）检查一次
+    - cron: '0 0 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  update-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Checkout MetaDoc repository
+        uses: actions/checkout@v4
+        with:
+          repository: JaredYe04/MetaDoc
+          token: ${{ secrets.METADOC_REPO_TOKEN || secrets.GITHUB_TOKEN }}
+          path: metadoc-repo
+
+      - name: Copy license files
+        run: |
+          cp metadoc-repo/meta-doc/src/renderer/src/assets/open-source-licenses.txt website/src/assets/open-source-licenses.txt
+          cp metadoc-repo/meta-doc/src/renderer/src/assets/third-party-assets.txt website/src/assets/third-party-assets.txt
+
+      - name: Check for changes
+        id: check-changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          if git diff --quiet website/src/assets/; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            git diff website/src/assets/
+          fi
+
+      - name: Commit and push changes
+        if: steps.check-changes.outputs.changed == 'true'
+        run: |
+          git add website/src/assets/*.txt
+          git commit -m "chore: update license files from MetaDoc repository [skip ci]"
+          git push
+

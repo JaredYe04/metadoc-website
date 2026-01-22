@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 阴影透明度控制变量 */
+    --shadow-opacity-1: 0.20;
+    --shadow-opacity-2: 0.17;
+    --shadow-opacity-3: 0.15;
+    --shadow-opacity-4: 0.13;
+    --shadow-opacity-base: 0.15;
+  }
+  
+  * {
+    @apply transition-colors duration-200;
+  }
+  
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+  }
+  
+  /* UI元素文字不可选中 */
+  nav, button, h1, h2, h3, h4, h5, h6, .hero-title, .text-gradient {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  /* 文本框文字可以选中 */
+  input, textarea, pre, code, [contenteditable] {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent;
+  }
+  
+  .glass {
+    @apply bg-white/10 dark:bg-gray-900/10 backdrop-blur-md border border-white/20 dark:border-gray-700/20;
+  }
+  
+  .hero-title {
+    position: relative;
+    display: inline-block;
+    /* 文字颜色：亮色主题黑色，暗色主题白色 */
+    color: #1f2937;
+    background-color: transparent !important;
+    /* 渐变阴影动画 - 亮色主题 */
+    animation: gradient-shadow-light 10s ease infinite;
+  }
+  
+  .dark .hero-title {
+    color: #ffffff;
+    /* 渐变阴影动画 - 暗色主题 */
+    animation: gradient-shadow-dark 10s ease infinite;
+  }
+  
+  /* 分隔线效果 - 在标题下方 */
+  .hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.7) 50%,
+      transparent 100%
+    );
+    opacity: 0.98;
+    pointer-events: none;
+  }
+  
+  .dark .hero-title::after {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.7) 50%,
+      transparent 100%
+    );
+    opacity: 0.98;
+  }
+  
+  /* 亮色主题渐变阴影动画 - 深色阴影，靠近黑色，使用CSS变量控制透明度 */
+  @keyframes gradient-shadow-light {
+    0% {
+      text-shadow: 
+        0 0 20px rgba(0, 0, 0, var(--shadow-opacity-1)),
+        0 0 40px rgba(30, 30, 30, var(--shadow-opacity-2)),
+        0 0 60px rgba(60, 60, 60, var(--shadow-opacity-3)),
+        0 0 80px rgba(90, 90, 90, var(--shadow-opacity-4)),
+        0 2px 4px rgba(0, 0, 0, var(--shadow-opacity-base));
+    }
+    20% {
+      text-shadow: 
+        0 0 20px rgba(20, 20, 50, var(--shadow-opacity-1)),
+        0 0 40px rgba(40, 40, 70, var(--shadow-opacity-2)),
+        0 0 60px rgba(60, 60, 90, var(--shadow-opacity-3)),
+        0 0 80px rgba(80, 80, 110, var(--shadow-opacity-4)),
+        0 2px 4px rgba(0, 0, 0, var(--shadow-opacity-base));
+    }
+    40% {
+      text-shadow: 
+        0 0 20px rgba(50, 20, 50, var(--shadow-opacity-1)),
+        0 0 40px rgba(70, 40, 70, var(--shadow-opacity-2)),
+        0 0 60px rgba(90, 60, 90, var(--shadow-opacity-3)),
+        0 0 80px rgba(110, 80, 110, var(--shadow-opacity-4)),
+        0 2px 4px rgba(0, 0, 0, var(--shadow-opacity-base));
+    }
+    60% {
+      text-shadow: 
+        0 0 20px rgba(50, 50, 20, var(--shadow-opacity-1)),
+        0 0 40px rgba(70, 70, 40, var(--shadow-opacity-2)),
+        0 0 60px rgba(90, 90, 60, var(--shadow-opacity-3)),
+        0 0 80px rgba(110, 110, 80, var(--shadow-opacity-4)),
+        0 2px 4px rgba(0, 0, 0, var(--shadow-opacity-base));
+    }
+    80% {
+      text-shadow: 
+        0 0 20px rgba(20, 50, 50, var(--shadow-opacity-1)),
+        0 0 40px rgba(40, 70, 70, var(--shadow-opacity-2)),
+        0 0 60px rgba(60, 90, 90, var(--shadow-opacity-3)),
+        0 0 80px rgba(80, 110, 110, var(--shadow-opacity-4)),
+        0 2px 4px rgba(0, 0, 0, var(--shadow-opacity-base));
+    }
+    100% {
+      text-shadow: 
+        0 0 20px rgba(0, 0, 0, var(--shadow-opacity-1)),
+        0 0 40px rgba(30, 30, 30, var(--shadow-opacity-2)),
+        0 0 60px rgba(60, 60, 60, var(--shadow-opacity-3)),
+        0 0 80px rgba(90, 90, 90, var(--shadow-opacity-4)),
+        0 2px 4px rgba(0, 0, 0, var(--shadow-opacity-base));
+    }
+  }
+  
+  /* 暗色主题渐变阴影动画 - 浅色阴影，靠近白色，使用CSS变量控制透明度 */
+  @keyframes gradient-shadow-dark {
+    0% {
+      text-shadow: 
+        0 0 20px rgba(255, 255, 255, var(--shadow-opacity-1)),
+        0 0 40px rgba(240, 240, 240, var(--shadow-opacity-2)),
+        0 0 60px rgba(220, 220, 220, var(--shadow-opacity-3)),
+        0 0 80px rgba(200, 200, 200, var(--shadow-opacity-4)),
+        0 2px 8px rgba(255, 255, 255, var(--shadow-opacity-base));
+    }
+    20% {
+      text-shadow: 
+        0 0 20px rgba(240, 240, 255, var(--shadow-opacity-1)),
+        0 0 40px rgba(230, 230, 250, var(--shadow-opacity-2)),
+        0 0 60px rgba(220, 220, 240, var(--shadow-opacity-3)),
+        0 0 80px rgba(210, 210, 230, var(--shadow-opacity-4)),
+        0 2px 8px rgba(255, 255, 255, var(--shadow-opacity-base));
+    }
+    40% {
+      text-shadow: 
+        0 0 20px rgba(255, 240, 255, var(--shadow-opacity-1)),
+        0 0 40px rgba(250, 230, 250, var(--shadow-opacity-2)),
+        0 0 60px rgba(240, 220, 240, var(--shadow-opacity-3)),
+        0 0 80px rgba(230, 210, 230, var(--shadow-opacity-4)),
+        0 2px 8px rgba(255, 255, 255, var(--shadow-opacity-base));
+    }
+    60% {
+      text-shadow: 
+        0 0 20px rgba(255, 255, 240, var(--shadow-opacity-1)),
+        0 0 40px rgba(250, 250, 230, var(--shadow-opacity-2)),
+        0 0 60px rgba(240, 240, 220, var(--shadow-opacity-3)),
+        0 0 80px rgba(230, 230, 210, var(--shadow-opacity-4)),
+        0 2px 8px rgba(255, 255, 255, var(--shadow-opacity-base));
+    }
+    80% {
+      text-shadow: 
+        0 0 20px rgba(240, 255, 255, var(--shadow-opacity-1)),
+        0 0 40px rgba(230, 250, 250, var(--shadow-opacity-2)),
+        0 0 60px rgba(220, 240, 240, var(--shadow-opacity-3)),
+        0 0 80px rgba(210, 230, 230, var(--shadow-opacity-4)),
+        0 2px 8px rgba(255, 255, 255, var(--shadow-opacity-base));
+    }
+    100% {
+      text-shadow: 
+        0 0 20px rgba(255, 255, 255, var(--shadow-opacity-1)),
+        0 0 40px rgba(240, 240, 240, var(--shadow-opacity-2)),
+        0 0 60px rgba(220, 220, 220, var(--shadow-opacity-3)),
+        0 0 80px rgba(200, 200, 200, var(--shadow-opacity-4)),
+        0 2px 8px rgba(255, 255, 255, var(--shadow-opacity-base));
+    }
+  }
+}
+

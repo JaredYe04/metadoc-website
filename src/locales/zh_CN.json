@@ -1,0 +1,255 @@
+{
+  "hero": {
+    "title": "MetaDoc",
+    "subtitle": "基于LLM Agent的智能文字处理软件",
+    "description": "面向学生与IT从业者的多功能智能文档处理平台",
+    "download": "立即下载",
+    "learnMore": "了解更多"
+  },
+  "features": {
+    "title": "功能特性",
+    "subtitle": "强大的功能，让文档处理更简单",
+    "docEdit": {
+      "title": "文档编辑",
+      "desc": "支持Markdown和LaTeX编辑，实时预览，语法高亮"
+    },
+    "ai": {
+      "title": "AI智能功能",
+      "desc": "基于LLM Agent的多智能体系统，RAG知识库，智能对话与校对"
+    },
+    "export": {
+      "title": "多格式导出",
+      "desc": "支持MD、HTML、DOCX、PDF、TEX等多种格式导出"
+    },
+    "visualization": {
+      "title": "数据可视化",
+      "desc": "UML、流程图、思维导图、词云等专业图表绘制"
+    }
+  },
+  "highlights": {
+    "title": "核心亮点",
+    "intelligent": {
+      "title": "智能化",
+      "desc": "基于LLM Agent的多智能体架构，实现精准上下文分析与深度校对"
+    },
+    "efficient": {
+      "title": "高效性",
+      "desc": "支持AI并发任务处理，可在短时间内生成大量内容"
+    },
+    "professional": {
+      "title": "专业性",
+      "desc": "原生支持UML、脑图、思维导图、程序流程图等专业图表绘制"
+    },
+    "compatible": {
+      "title": "兼容性",
+      "desc": "支持Markdown、LaTeX等多种文档格式，兼容多种操作系统平台"
+    }
+  },
+  "download": {
+    "title": "下载MetaDoc",
+    "subtitle": "选择适合您的版本",
+    "latest": "最新版本",
+    "version": "版本",
+    "releaseDate": "发布日期",
+    "download": "下载",
+    "github": "GitHub仓库",
+    "steam": "Steam商店",
+    "comingSoon": "即将推出",
+    "loading": "加载中...",
+    "error": "加载失败",
+    "systemRequirement": "系统要求：64位 Windows 10 及以上系统"
+  },
+  "nav": {
+    "home": "首页",
+    "mock": "界面预览",
+    "features": "功能特性",
+    "download": "下载",
+    "about": "关于",
+    "language": "语言"
+  },
+  "footer": {
+    "description": "基于LLM Agent的智能文字处理软件",
+    "links": {
+      "github": "GitHub",
+      "steam": "Steam",
+      "docs": "文档"
+    },
+    "copyright": "© 2026 MetaDoc. All rights reserved."
+  },
+  "about": {
+    "appName": "MetaDoc",
+    "version": "版本",
+    "releaseDate": "发布日期",
+    "buildEnvironment": "构建环境",
+    "buildEnvironmentDev": "开发环境",
+    "buildEnvironmentRelease": "发布环境",
+    "updateSettings": "更新设置",
+    "autoCheckUpdates": "自动检查更新",
+    "updateChannel": "更新渠道",
+    "channelRelease": "正式版",
+    "channelDev": "开发版",
+    "checkUpdate": "检查更新",
+    "checking": "检查中...",
+    "updateAvailable": "有新版本可用",
+    "updateAvailableDesc": "发现新版本：{version}",
+    "noUpdate": "已是最新版本",
+    "noUpdateDesc": "您当前使用的是最新版本",
+    "checkUpdateError": "检查更新失败",
+    "openSourceLicenses": "开源许可证",
+    "thirdPartyAssets": "第三方资产"
+  },
+  "mock": {
+    "title": "界面预览",
+    "subtitle": "体验 MetaDoc 的现代化界面设计",
+    "leftMenu": {
+      "file": "文件",
+      "fileTooltip": "文件操作",
+      "new": "新建",
+      "open": "打开",
+      "saveAll": "保存全部",
+      "save": "保存",
+      "saveAs": "另存为",
+      "export": "导出",
+      "closeFile": "关闭文件",
+      "aiAssistant": "AI助手",
+      "aiToolTooltip": "AI工具",
+      "chatWithAI": "AI对话",
+      "handwritingFormulaRecognition": "手写公式识别",
+      "smartDrawingAssistant": "智能绘图助手",
+      "dataAnalysis": "数据分析",
+      "ocr": "OCR识别",
+      "attachment": "附件管理",
+      "settings": "设置",
+      "recentFiles": "最近文件",
+      "recentFilesTooltip": "最近打开的文件",
+      "langTooltip": "语言",
+      "knowledgeBase": "知识库",
+      "workspaceExplorer": "工作目录",
+      "home": "主页",
+      "exit": "退出",
+      "exitTooltip": "退出应用",
+      "saveAndExit": "保存并退出",
+      "saveAllAndExit": "保存全部并退出",
+      "exitWithoutSaving": "不保存退出"
+    },
+    "viewMenu": {
+      "home": "主页",
+      "editor": "编辑器",
+      "outline": "大纲",
+      "visualize": "可视化",
+      "agent": "Agent",
+      "proofread": "校对"
+    },
+    "bottomMenu": {
+      "versionTooltip": "版本信息",
+      "wordCount": "字数",
+      "currentFile": "当前文件: ",
+      "newFile": "新文件",
+      "logConsoleTooltip": "日志控制台",
+      "logConsoleLabel": "日志",
+      "notificationTooltip": "通知",
+      "notificationEmpty": "无通知",
+      "aiTaskQueueTooltip": "AI任务队列",
+      "aiTaskQueueLabel": "AI任务"
+    },
+    "tabs": {
+      "untitled": "未命名",
+      "home": "主页",
+      "example": "示例文档"
+    },
+    "dummy": {
+      "description": "要使用完整功能，请在软件中体验。下载 MetaDoc 开始使用所有功能。",
+      "download": "下载 MetaDoc"
+    },
+    "exampleContent": {
+      "title": "MetaDoc - 智能文字处理软件",
+      "subtitle": "基于 LLM Agent 的智能文字处理软件，专为学生和 IT 从业者设计。它不仅仅是一个编辑器，更是一个强大的文档创作和知识管理平台。",
+      "architectureTitle": "系统架构概览",
+      "architectureDesc": "MetaDoc 采用现代化的分层架构设计，确保系统的可扩展性和可维护性。以下是系统的整体架构图：",
+      "highlightsTitle": "核心亮点",
+      "intelligentTitle": "智能化文档处理",
+      "intelligentDesc": "MetaDoc 采用先进的 **多智能体架构**，能够理解文档上下文，提供精准的内容建议和深度校对。无论是学术论文、技术文档还是日常笔记，MetaDoc 都能帮你提升写作效率。",
+      "intelligentFeatures": "**主要特性：**",
+      "intelligentFeature1": "🤖 **AI 智能补全**：基于上下文的智能内容生成",
+      "intelligentFeature2": "📝 **深度校对**：不仅仅是拼写检查，还能优化表达和逻辑",
+      "intelligentFeature3": "💡 **智能建议**：实时提供写作建议和内容优化方案",
+      "visualizationTitle": "强大的可视化能力",
+      "visualizationDesc": "MetaDoc 原生支持多种专业图表，让你的文档更加生动和专业。",
+      "mermaidGanttTitle": "Mermaid 甘特图",
+      "mermaidGanttDesc": "使用 Mermaid 创建精美的项目进度甘特图，展示 MetaDoc 开发路线图：",
+      "echartsTitle": "ECharts 数据可视化",
+      "echartsDesc": "使用 ECharts 创建精美的数据图表，展示项目功能使用情况：",
+      "plantumlClassTitle": "PlantUML UML 类图",
+      "plantumlClassDesc": "使用 PlantUML 绘制专业的 UML 类图，展示核心类的设计：",
+      "textStylesTitle": "丰富的文本样式",
+      "textStylesDesc": "MetaDoc 支持丰富的 Markdown 语法和 LaTeX 数学公式，让你的文档更加专业。",
+      "codeHighlightTitle": "代码高亮",
+      "codeHighlightDesc": "支持多种编程语言的语法高亮：",
+      "latexTitle": "LaTeX 数学公式",
+      "latexDesc": "支持行内公式和块级公式：",
+      "latexInlineExample": "行内公式示例：$E = mc^2$，这是爱因斯坦的质能方程。",
+      "latexBlockExample": "块级公式示例：",
+      "latexComplexExample": "复杂公式示例：",
+      "latexMatrixExample": "矩阵示例：",
+      "formatSupportTitle": "多格式支持",
+      "formatSupportDesc": "MetaDoc 支持多种文档格式，满足不同场景需求：",
+      "formatMarkdown": "**Markdown**",
+      "formatMarkdownUse": "日常文档、博客文章",
+      "formatLatex": "**LaTeX**",
+      "formatLatexUse": "学术论文、技术报告",
+      "formatText": "**纯文本**",
+      "formatTextUse": "代码、配置文件",
+      "featuresTitle": "实用功能",
+      "feature1Title": "1. 实时预览",
+      "feature1Desc": "编写文档时，右侧实时显示渲染效果，所见即所得。",
+      "feature2Title": "2. 大纲导航",
+      "feature2Desc": "自动提取文档大纲，快速跳转到任意章节。支持拖拽调整章节顺序。",
+      "feature3Title": "3. 多标签页",
+      "feature3Desc": "像浏览器一样管理多个文档，轻松切换，提高工作效率。",
+      "feature4Title": "4. 主题切换",
+      "feature4Desc": "支持亮色和暗色主题，保护你的眼睛，适应不同使用场景。",
+      "scenariosTitle": "适用场景",
+      "scenario1": "📖 **学术写作**：论文、报告、研究笔记",
+      "scenario2": "💻 **技术文档**：API 文档、开发手册、技术博客",
+      "scenario3": "📝 **日常笔记**：学习笔记、会议记录、待办事项",
+      "scenario4": "🎓 **教育培训**：课程材料、教学课件、学生作业",
+      "whyTitle": "为什么选择 MetaDoc？",
+      "why1": "1. **🚀 高效便捷**：AI 辅助写作，大幅提升创作效率",
+      "why2": "2. **🎨 专业美观**：丰富的图表和样式，让文档更专业",
+      "why3": "3. **🔒 安全可靠**：本地存储，数据安全有保障",
+      "why4": "4. **🌍 跨平台**：支持 Windows、macOS、Linux",
+      "futureTitle": "未来展望",
+      "futureDesc": "MetaDoc 将持续优化和更新，未来将支持：",
+      "future1": "- 🌐 云端同步功能",
+      "future2": "- 👥 多人协作编辑",
+      "future3": "- 📱 移动端应用",
+      "future4": "- 🔌 更多插件扩展",
+      "footer": "**开始使用 MetaDoc，体验智能文档处理的魅力！** 🎉",
+      "footerNote": "*本文档使用 MetaDoc 编写，展示了其强大的功能和精美的图表支持。*",
+      "outline": {
+        "title": "MetaDoc - 智能文字处理软件",
+        "architecture": "系统架构概览",
+        "highlights": "核心亮点",
+        "intelligent": "智能化文档处理",
+        "visualization": "强大的可视化能力",
+        "mermaidGantt": "Mermaid 甘特图",
+        "echarts": "ECharts 数据可视化",
+        "plantumlArchitecture": "PlantUML 系统架构图",
+        "plantumlClass": "PlantUML UML 类图",
+        "textStyles": "丰富的文本样式",
+        "codeHighlight": "代码高亮",
+        "latex": "LaTeX 数学公式",
+        "formatSupport": "多格式支持",
+        "features": "实用功能",
+        "realtimePreview": "实时预览",
+        "outlineNav": "大纲导航",
+        "multiTabs": "多标签页",
+        "themeSwitch": "主题切换",
+        "scenarios": "适用场景",
+        "why": "为什么选择 MetaDoc？",
+        "future": "未来展望"
+      }
+    }
+  }
+}
+

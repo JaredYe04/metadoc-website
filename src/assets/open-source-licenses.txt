@@ -1,0 +1,599 @@
+Open Source Licenses
+
+This application uses the following open source software:
+
+Total packages: 101
+
+Package: @babel/core@7.28.5
+License: MIT
+Repository: https://github.com/babel/babel
+Publisher: The Babel Team
+
+
+Package: @babel/plugin-transform-nullish-coalescing-operator@7.27.1
+License: MIT
+Repository: https://github.com/babel/babel
+Publisher: The Babel Team
+
+
+Package: @babel/plugin-transform-optional-chaining@7.28.5
+License: MIT
+Repository: https://github.com/babel/babel
+Publisher: The Babel Team
+
+
+Package: @babel/preset-env@7.28.5
+License: MIT
+Repository: https://github.com/babel/babel
+Publisher: The Babel Team
+
+
+Package: @capacitor/android@7.4.4
+License: MIT
+Repository: https://github.com/ionic-team/capacitor
+Publisher: Ionic Team <hi@ionic.io>
+
+
+Package: @capacitor/cli@7.2.0
+License: MIT
+Repository: https://github.com/ionic-team/capacitor
+Publisher: Ionic Team <hi@ionic.io>
+
+
+Package: @capacitor/core@7.4.4
+License: MIT
+Repository: https://github.com/ionic-team/capacitor
+Publisher: Ionic Team <hi@ionic.io>
+
+
+Package: @electron-toolkit/preload@3.0.2
+License: MIT
+Repository: https://github.com/alex8088/electron-toolkit
+Publisher: Alex Wei <https://github.com/alex8088>
+
+
+Package: @electron-toolkit/utils@3.0.0
+License: MIT
+Repository: https://github.com/alex8088/electron-toolkit
+Publisher: Alex Wei <https://github.com/alex8088>
+
+
+Package: @element-plus/icons-vue@2.3.2
+License: MIT
+Repository: https://github.com/element-plus/element-plus-icons
+
+
+Package: @google/genai@1.33.0
+License: Apache-2.0
+Repository: https://github.com/googleapis/js-genai
+
+
+Package: @msgpack/msgpack@3.1.3
+License: ISC
+Repository: https://github.com/msgpack/msgpack-javascript
+Publisher: The MessagePack community
+
+
+Package: @oneidentity/zstd-js@1.0.3
+License: Custom: LICENSE
+Repository: https://github.com/OneIdentity/zstd-js
+Publisher: Zsombor Szende - @szendezsombor
+
+
+Package: @resvg/resvg-js@2.6.2
+License: MPL-2.0
+Repository: https://github.com/yisibl/resvg-js
+
+
+Package: @rollup/plugin-babel@6.1.0
+License: MIT
+Repository: https://github.com/rollup/plugins
+Publisher: Rich Harris
+
+
+Package: @ssthouse/vue3-tree-chart@0.3.0
+License: UNKNOWN
+Publisher: ssthouse
+
+
+Package: @types/jsdom@27.0.0
+License: MIT
+Repository: https://github.com/DefinitelyTyped/DefinitelyTyped
+
+
+Package: @xmldom/xmldom@0.8.11
+License: MIT
+Repository: https://github.com/xmldom/xmldom
+
+
+Package: ag-grid-community@33.3.2
+License: MIT
+Repository: https://github.com/ag-grid/ag-grid
+Publisher: Sean Landsman <sean@thelandsmans.com>
+
+
+Package: ag-grid-vue3@33.3.2
+License: MIT
+Repository: https://github.com/ag-grid/ag-grid
+Publisher: Sean Landsman <sean@thelandsmans.com>
+
+
+Package: axios@1.13.2
+License: MIT
+Repository: https://github.com/axios/axios
+Publisher: Matt Zabriskie
+
+
+Package: better-sqlite3@12.5.0
+License: MIT
+Repository: https://github.com/WiseLibs/better-sqlite3
+Publisher: Joshua Wise <joshuathomaswise@gmail.com>
+
+
+Package: body-parser@2.2.0
+License: MIT
+Repository: https://github.com/expressjs/body-parser
+
+
+Package: comlink@4.4.2
+License: Apache-2.0
+Repository: https://github.com/GoogleChromeLabs/comlink
+Publisher: Surma <surma@google.com>
+
+
+Package: concurrently@9.2.1
+License: MIT
+Repository: https://github.com/open-cli-tools/concurrently
+Publisher: Kimmo Brunfeldt
+
+
+Package: core-js@3.46.0
+License: MIT
+Repository: https://github.com/zloirock/core-js
+Publisher: Denis Pushkarev <zloirock@zloirock.ru>
+
+
+Package: cors@2.8.5
+License: MIT
+Repository: https://github.com/expressjs/cors
+Publisher: Troy Goode <troygoode@gmail.com>
+
+
+Package: cspell-lib@9.6.0
+License: MIT
+Repository: https://github.com/streetsidesoftware/cspell
+Publisher: Jason Dent
+
+
+Package: d3-cloud@1.2.7
+License: BSD-3-Clause
+Repository: https://github.com/jasondavies/d3-cloud
+Publisher: Jason Davies
+
+
+Package: d3@7.9.0
+License: ISC
+Repository: https://github.com/d3/d3
+Publisher: Mike Bostock
+
+
+Package: docx@9.5.1
+License: MIT
+Repository: https://github.com/dolanmiu/docx
+Publisher: Dolan Miu
+
+
+Package: dom-to-image-more@3.7.2
+License: MIT
+Repository: https://github.com/1904labs/dom-to-image-more
+Publisher: Marc Brooks <idisposable@gmail.com>
+
+
+Package: dom-to-image@2.6.0
+License: MIT
+Repository: https://github.com/tsayen/dom-to-image
+Publisher: Anatolii Saienko <anatoly.sayenko@gmail.com>
+
+
+Package: echarts@5.6.0
+License: Apache-2.0
+Repository: https://github.com/apache/echarts
+
+
+Package: electron-store@8.2.0
+License: MIT
+Repository: https://github.com/sindresorhus/electron-store
+Publisher: Sindre Sorhus <sindresorhus@gmail.com>
+
+
+Package: electron-updater@6.6.2
+License: MIT
+Repository: https://github.com/electron-userland/electron-builder
+Publisher: Vladimir Krivosheev
+
+
+Package: element-plus@2.13.0
+License: MIT
+Repository: https://github.com/element-plus/element-plus
+
+
+Package: express@4.21.2
+License: MIT
+Repository: https://github.com/expressjs/express
+Publisher: TJ Holowaychuk <tj@vision-media.ca>
+
+
+Package: form-data@4.0.5
+License: MIT
+Repository: https://github.com/form-data/form-data
+Publisher: Felix Geisendörfer <felix@debuggable.com>
+
+
+Package: html-docx-js@0.3.1
+License: MIT
+Repository: https://github.com/evidenceprime/html-docx-js
+Publisher: Artur Nowak <artur.nowak@evidenceprime.com>
+
+
+Package: html-to-docx@1.8.0
+License: MIT
+Repository: https://github.com/privateOmega/html-to-docx
+Publisher: privateOmega <privateOmega@protonmail.com>
+
+
+Package: html-to-image@1.11.13
+License: MIT
+Repository: https://github.com/bubkoo/html-to-image
+Publisher: bubkooo <bubkoo.wy@gmail.com>
+
+
+Package: iconv-lite@0.7.2
+License: MIT
+Repository: https://github.com/pillarjs/iconv-lite
+Publisher: Alexander Shtuchkin <ashtuchkin@gmail.com>
+
+
+Package: ionic@5.4.16
+License: MIT
+Repository: https://github.com/ionic-team/ionic-cli
+Publisher: Ionic Team <hi@ionic.io>
+
+
+Package: jieba-js@1.0.2
+License: ISC
+Repository: https://github.com/bluelovers/jieba-js
+
+
+Package: js-cookie@3.0.5
+License: MIT
+Repository: https://github.com/js-cookie/js-cookie
+Publisher: Klaus Hartl
+
+
+Package: jsdom@27.4.0
+License: MIT
+Repository: https://github.com/jsdom/jsdom
+
+
+Package: jszip@3.10.1
+License: MIT
+Repository: https://github.com/Stuk/jszip
+Publisher: Stuart Knightley <stuart@stuartk.com>
+
+
+Package: latex-to-omml@2.1.1
+License: MIT
+Repository: https://github.com/JaredYe04/latex-to-omml
+
+
+Package: license-checker-rseidelsohn@4.4.2
+License: BSD-3-Clause
+Repository: https://github.com/RSeidelsohn/license-checker-rseidelsohn
+Publisher: Roman Seidelsohn <rseidelsohn@gmail.com>
+
+
+Package: lodash@4.17.21
+License: MIT
+Repository: https://github.com/lodash/lodash
+Publisher: John-David Dalton <john.david.dalton@gmail.com>
+
+
+Package: mammoth@1.10.0
+License: BSD-2-Clause
+Repository: https://github.com/mwilliamson/mammoth.js
+Publisher: Michael Williamson <mike@zwobble.org>
+
+
+Package: markdown-it-emoji@3.0.0
+License: MIT
+Repository: https://github.com/markdown-it/markdown-it-emoji
+
+
+Package: markdown-it-footnote@4.0.0
+License: MIT
+Repository: https://github.com/markdown-it/markdown-it-footnote
+
+
+Package: markdown-it-task-lists@2.1.1
+License: ISC
+Repository: https://github.com/revin/markdown-it-task-lists
+Publisher: Revin Guillen
+
+
+Package: markdown-it@14.1.0
+License: MIT
+Repository: https://github.com/markdown-it/markdown-it
+
+
+Package: marked@15.0.1
+License: MIT
+Repository: https://github.com/markedjs/marked
+Publisher: Christopher Jeffrey
+
+
+Package: mathjax-node@2.1.1
+License: Apache-2.0
+Repository: https://github.com/mathjax/MathJax-node
+
+
+Package: md-editor-v3@5.8.5
+License: MIT
+Repository: https://github.com/imzbf/md-editor-v3
+Publisher: zbf
+
+
+Package: md-to-pdf@5.2.4
+License: MIT
+Repository: https://github.com/simonhaenisch/md-to-pdf
+Publisher: Simon Haenisch
+
+
+Package: mermaid@11.12.2
+License: MIT
+Repository: https://github.com/mermaid-js/mermaid
+Publisher: Knut Sveidqvist
+
+
+Package: meta-doc@0.17.3
+License: UNKNOWN
+Repository: https://github.com/JaredYe04/MetaDoc
+Publisher: ByteLight
+
+
+Package: mitt@3.0.1
+License: MIT
+Repository: https://github.com/developit/mitt
+
+
+Package: mock-aws-s3@4.0.2
+License: MIT
+Repository: https://github.com/MathieuLoutre/mock-aws-s3
+Publisher: Mathieu Triay <mathieu.triay@gmail.com>
+
+
+Package: monaco-editor@0.53.0
+License: MIT
+Repository: https://github.com/microsoft/monaco-editor
+Publisher: Microsoft Corporation
+
+
+Package: monaco-latex@0.0.1
+License: MIT
+Publisher: 7PH <b.raymond@protonmail.com>
+
+
+Package: multer@1.4.5-lts.2
+License: MIT
+Repository: https://github.com/expressjs/multer
+
+
+Package: mxgraph@4.2.2
+License: Apache-2.0
+Repository: https://github.com/jgraph/mxgraph
+Publisher: JGraph Ltd <support@jgraph.com>
+
+
+Package: natural@8.1.0
+License: MIT
+Repository: https://github.com/NaturalNode/natural
+Publisher: Chris Umbel <chris@chrisumbel.com>
+
+
+Package: nock@13.5.6
+License: MIT
+Repository: https://github.com/nock/nock
+Publisher: Pedro Teixeira <pedro.teixeira@gmail.com>
+
+
+Package: node-pdf-to-markdown@1.2.2
+License: MIT
+Repository: https://github.com/JaredYe04/node-pdf-to-markdown
+Publisher: devilyouwei
+
+
+Package: node-plantuml@0.9.0
+License: MIT
+Repository: https://github.com/markushedvall/node-plantuml
+Publisher: Markus Hedvall <mackanhedvall@gmail.com>
+
+
+Package: office-to-pdf@4.0.0
+License: ISC
+Publisher: Janek Rahrt
+
+
+Package: openai@4.104.0
+License: Apache-2.0
+Repository: https://github.com/openai/openai-node
+Publisher: OpenAI <support@openai.com>
+
+
+Package: pdf-lib@1.17.1
+License: MIT
+Repository: https://github.com/Hopding/pdf-lib
+Publisher: Andrew Dillon <andrew.dillon.j@gmail.com>
+
+
+Package: pdf-parse@1.1.4
+License: MIT
+Repository: https://github.com/mehmet-kozan/pdf-parse
+Publisher: Mehmet Kozan <mehmet.kozan@live.com>
+
+
+Package: pdfjs-dist@5.4.530
+License: Apache-2.0
+Repository: https://github.com/mozilla/pdf.js
+
+
+Package: pinia@3.0.4
+License: MIT
+Repository: https://github.com/vuejs/pinia
+Publisher: Eduardo San Martin Morote <posva13@gmail.com>
+
+
+Package: ppt-pdf@3.0.0
+License: ISC
+Publisher: Pavan Patchikarla
+
+
+Package: ppt-to-text@1.0.1
+License: Apache-2.0
+Repository: https://github.com/JaredYe04/ppt-to-text
+Publisher: sheetjs
+
+
+Package: regenerator-runtime@0.14.1
+License: MIT
+Repository: https://github.com/facebook/regenerator.git#main
+Publisher: Ben Newman <bn@cs.stanford.edu>
+
+
+Package: segment@0.1.3
+License: MIT*
+Repository: https://github.com/leizongmin/node-segment
+Publisher: Zongmin Lei <leizongmin@gmail.com>
+
+
+Package: sharp@0.34.5
+License: Apache-2.0
+Repository: https://github.com/lovell/sharp
+Publisher: Lovell Fuller <npm@lovell.info>
+
+
+Package: slice-ansi@7.1.2
+License: MIT
+Repository: https://github.com/chalk/slice-ansi
+
+
+Package: sqlite-vec@0.1.7-alpha.2
+License: MIT*
+Repository: https://TODO
+Publisher: Alex Garcia
+
+
+Package: tdesign-icons-vue-next@0.3.7
+License: MIT
+Repository: https://github.com/Tencent/tdesign-icons
+
+
+Package: tdesign-vue-next@1.17.2
+License: MIT
+Repository: https://github.com/Tencent/tdesign-vue-next
+Publisher: tdesign
+
+
+Package: tesseract.js@6.0.1
+License: Apache-2.0
+Repository: https://github.com/naptha/tesseract.js
+
+
+Package: three@0.170.0
+License: MIT
+Repository: https://github.com/mrdoob/three.js
+Publisher: mrdoob
+
+
+Package: tinycolor2@1.6.0
+License: MIT
+Repository: https://github.com/bgrins/TinyColor
+Publisher: Brian Grinstead <briangrinstead@gmail.com>
+
+
+Package: vditor@3.11.2
+License: MIT
+Repository: https://github.com/Vanessa219/vditor
+Publisher: Vanessa <v@b3log.org>
+
+
+Package: vicons@0.0.1
+License: MIT
+Publisher: 07akioni
+
+
+Package: vue-echarts@7.0.3
+License: MIT
+Repository: https://github.com/ecomfe/vue-echarts
+Publisher: GU Yiling <justice360@gmail.com>
+
+
+Package: vue-i18n@11.1.12
+License: MIT
+Repository: https://github.com/intlify/vue-i18n
+Publisher: kazuya kawaguchi <kawakazu80@gmail.com>
+
+
+Package: vue-pdf@4.3.0
+License: MIT
+Repository: https://github.com/FranckFreiburger/vue-pdf
+Publisher: Franck FREIBURGER
+
+
+Package: vue-router@4.6.3
+License: MIT
+Repository: https://github.com/vuejs/router
+Publisher: Eduardo San Martin Morote <posva13@gmail.com>
+
+
+Package: vue3-markdown-it@1.0.10
+License: MIT
+Repository: https://github.com/JanGuillermo/vue3-markdown-it
+Publisher: Jan Guillermo
+
+
+Package: vue3-pdfjs@0.1.6
+License: MIT
+Repository: https://github.com/randolphtellis/vue3-pdfjs
+Publisher: Randolph Tellis
+
+
+Package: word-extractor@1.0.4
+License: MIT
+Repository: https://github.com/morungos/node-word-extractor
+Publisher: Stuart Watt <stuart@morungos.com>
+
+
+Package: xlsx@0.18.5
+License: Apache-2.0
+Repository: https://github.com/SheetJS/sheetjs
+Publisher: sheetjs
+
+
+Package: xmldom@0.6.0
+License: MIT
+Repository: https://github.com/xmldom/xmldom
+Publisher: jindw <jindw@xidea.org>
+
+
+============================================================
+License Summary
+============================================================
+
+MIT: 75 package(s)
+Apache-2.0: 11 package(s)
+ISC: 6 package(s)
+UNKNOWN: 2 package(s)
+BSD-3-Clause: 2 package(s)
+MIT*: 2 package(s)
+Custom: LICENSE: 1 package(s)
+MPL-2.0: 1 package(s)
+BSD-2-Clause: 1 package(s)
