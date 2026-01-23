@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "compile-latex": "node scripts/compile-latex-examples.js"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.2",
@@ -13,16 +14,19 @@
     "@vueuse/core": "^10.9.0",
     "echarts": "^6.0.0",
     "element-plus": "^2.8.8",
+    "lodash-es": "^4.17.21",
     "markdown-it": "^14.1.0",
     "marked": "^17.0.1",
     "md-editor-v3": "^6.3.1",
     "mermaid": "^11.12.2",
     "monaco-editor": "^0.55.1",
+    "node-latex-compiler": "^1.0.1",
     "three": "^0.164.1",
     "vditor": "^3.11.2",
     "vue": "^3.4.21",
     "vue-i18n": "^9.9.1",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "vue3-pdfjs": "^0.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",

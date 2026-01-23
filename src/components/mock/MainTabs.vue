@@ -5,6 +5,7 @@
         v-model="currentActiveId"
         type="card"
         class="main-tabs"
+        @tab-change="handleTabChange"
       >
         <el-tab-pane
           v-for="tab in mockTabs"
@@ -75,9 +76,10 @@ const { currentTheme } = useMockTheme()
 
 
 
-// Mock 数据：只保留一个 example.md 标签页
+// Mock 数据：包含 markdown 和 latex 两个标签页
 const mockTabs = ref([
-  { id: 'tab1', title: t('mock.tabs.example'), subtitle: 'example.md', dirty: true }
+  { id: 'tab1', title: t('mock.tabs.example'), subtitle: 'example.md', dirty: true },
+  { id: 'tab2', title: t('mock.tabs.exampleLatex'), subtitle: 'example.tex', dirty: false }
 ])
 
 const currentActiveId = ref('tab1')
@@ -145,6 +147,16 @@ const canCloseTab = (tab) => {
 const handleCloseTab = (tabId) => {
   // Mock 版本：关闭 tab 的逻辑（可以留空或显示提示）
   console.log('Close tab:', tabId)
+}
+
+// 处理 tab 切换
+const handleTabChange = (tabId) => {
+  // 发送 tab 切换事件
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('tab-change', {
+      detail: { tabId }
+    }))
+  }
 }
 </script>
 

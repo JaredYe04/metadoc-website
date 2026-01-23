@@ -16,13 +16,13 @@
       <ViewMenuContainer>
         <div class="content-area-wrapper">
           <el-container class="content-area">
-            <!-- 子视图菜单（仅在文档相关视图显示，移动端隐藏） -->
-            <el-aside v-if="showSubViewMenu && !isMobile" class="sub-view-menu-aside" :class="{ 'is-collapsed': viewMenuCollapsed }">
+            <!-- 子视图菜单（仅在文档相关视图显示，移动端隐藏，LaTeX tab 不显示） -->
+            <el-aside v-if="showSubViewMenu && !isMobile && !isLatexTab" class="sub-view-menu-aside" :class="{ 'is-collapsed': viewMenuCollapsed }">
               <ViewMenu @collapse-changed="handleViewMenuCollapseChanged" />
             </el-aside>
             <el-container class="content-shell">
               <el-main class="content-main">
-                <!-- 根据当前视图显示不同的组件 -->
+                <!-- 根据当前 tab 和视图显示不同的组件 -->
                 <component :is="currentViewComponent" />
               </el-main>
             </el-container>
@@ -52,6 +52,7 @@ import BottomMenu from './BottomMenu.vue'
 import { useMockTheme } from './utils/theme'
 import Home from './views/Home.vue'
 import MarkdownEditor from './views/MarkdownEditor.vue'
+import LaTeXEditor from './views/LaTeXEditor.vue'
 import Outline from './views/Outline.vue'
 import Visualize from './views/Visualize.vue'
 import AgentView from './views/AgentView.vue'
@@ -82,13 +83,22 @@ const handleViewMenuCollapseChanged = (collapsed) => {
   viewMenuCollapsed.value = collapsed
 }
 
+// 当前 tab ID（从 MainTabs 获取）
+const currentTabId = ref('tab1')
+
 // 当前视图
 const currentView = ref('home')
+
+// 判断是否是 LaTeX tab
+const isLatexTab = computed(() => {
+  return currentTabId.value === 'tab2'
+})
 
 // 视图组件映射
 const viewComponents = {
   home: Home,
   editor: MarkdownEditor,
+  latex: LaTeXEditor,
   outline: Outline,
   visualize: Visualize,
   agent: AgentView,
@@ -96,25 +106,47 @@ const viewComponents = {
 }
 
 const currentViewComponent = computed(() => {
+  // 如果是 LaTeX tab，直接显示 LaTeX 编辑器
+  if (isLatexTab.value) {
+    return LaTeXEditor
+  }
+  // 否则根据当前视图显示组件
   return viewComponents[currentView.value] || Home
 })
+
+// 监听 tab 切换事件
+const handleTabChange = (event) => {
+  const tabId = event.detail?.tabId
+  if (tabId) {
+    currentTabId.value = tabId
+    // LaTeX tab 不需要视图菜单，直接显示编辑器
+    if (tabId === 'tab2') {
+      currentView.value = 'latex'
+    } else if (tabId === 'tab1') {
+      // Markdown tab 默认显示编辑器
+      currentView.value = 'editor'
+    }
+  }
+}
 
 // 监听视图切换事件
 const handleViewMenuSelect = (event) => {
   const view = event.detail?.view
-  if (view && viewComponents[view]) {
+  if (view && viewComponents[view] && !isLatexTab.value) {
     currentView.value = view
   }
 }
 
 onMounted(() => {
   window.addEventListener('view-menu-select', handleViewMenuSelect)
+  window.addEventListener('tab-change', handleTabChange)
   checkMobile()
   window.addEventListener('resize', checkMobile)
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('view-menu-select', handleViewMenuSelect)
+  window.removeEventListener('tab-change', handleTabChange)
   window.removeEventListener('resize', checkMobile)
 })
 </script>
