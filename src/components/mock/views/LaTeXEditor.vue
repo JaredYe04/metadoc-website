@@ -241,10 +241,13 @@ const allPdfConfigs = computed(() => {
   const configs = {}
   const langs = ['zh', 'en']
   const themes = ['', 'dark']
+  // 使用 BASE_URL 确保在生产环境中路径正确
+  const baseUrl = import.meta.env.BASE_URL
   langs.forEach(lang => {
     themes.forEach(theme => {
       const themeSuffix = theme ? `-${theme}` : ''
-      const url = `/pdfs/example-${lang}${themeSuffix}.pdf`
+      // 确保路径以 / 开头，并正确处理 base URL
+      const url = `${baseUrl}pdfs/example-${lang}${themeSuffix}.pdf`.replace(/\/+/g, '/')
       const key = `${lang}-${theme || 'light'}`
       configs[key] = {
         url: url,
