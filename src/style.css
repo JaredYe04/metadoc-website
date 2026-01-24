@@ -46,6 +46,215 @@
     @apply bg-white/10 dark:bg-gray-900/10 backdrop-blur-md border border-white/20 dark:border-gray-700/20;
   }
   
+  /* Panel 模糊边缘过渡效果 - 使用精确的颜色混合算法 */
+  .panel-blur-edge {
+    position: relative;
+    overflow: visible;
+  }
+  
+  /* 颜色混合算法说明：
+   * 交界处的颜色 = 两个相邻 panel 背景色的混合色
+   * 上一个 panel 的底部：从自己的背景色渐变到混合色
+   * 下一个 panel 的顶部：从混合色渐变到自己的背景色
+   * 
+   * 颜色定义（浅色模式，使用不同白色程度让渐变更明显）：
+   * Hero: 纯白色 rgb(255,255,255)
+   * MockShowcase: 浅灰色 rgb(249,250,251)
+   * Features: 稍深灰色 rgb(245,247,250) - 让渐变更明显
+   * Highlights: 米白色 rgb(253,252,250) - 暖色调白色
+   * Download: 灰白色 rgb(251,252,253) - 稍浅灰色
+   * About: 暖白色 rgb(254,253,251) - 偏暖的白色
+   * 
+   * 暗色模式：深灰 rgb(17,24,39), 中灰 rgb(31,41,55), 黑色 rgb(0,0,0)
+   * 
+   * 混合公式：mix = (color1 + color2) / 2 (50%混合)
+   */
+  
+  /* MockShowcase: 浅灰色背景 rgb(249,250,251)
+   * 顶部：从纯白色(Hero)渐变到白色+灰色混合色
+   * 底部：从灰色渐变到灰色+稍深灰色混合色（Features是稍深灰色）
+   */
+  .panel-blur-edge-gray-first {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(253, 253, 254, 1) 5%,
+      rgba(252, 252, 253, 1) 10%,
+      rgba(250, 250, 251, 1) 15%,
+      rgba(249, 250, 251, 1) 20%,
+      rgba(249, 250, 251, 1) 80%,
+      rgba(247, 248, 250, 1) 85%,
+      rgba(246, 248, 250, 1) 90%,
+      rgba(247, 248, 250, 1) 95%,
+      rgba(247, 248, 250, 1) 100%
+    );
+  }
+  
+  .dark .panel-blur-edge-gray-first {
+    background: linear-gradient(
+      to bottom,
+      rgba(17, 24, 39, 1) 0%,
+      rgba(20, 28, 43, 1) 5%,
+      rgba(22, 30, 45, 1) 10%,
+      rgba(26, 35, 50, 1) 15%,
+      rgba(31, 41, 55, 1) 20%,
+      rgba(31, 41, 55, 1) 80%,
+      rgba(31, 41, 55, 1) 85%,
+      rgba(31, 41, 55, 1) 90%,
+      rgba(31, 41, 55, 1) 95%,
+      rgba(31, 41, 55, 1) 100%
+    );
+  }
+  
+  /* Features: 稍深灰色背景 rgb(245,247,250)
+   * 顶部：从灰色+稍深灰色混合色渐变到稍深灰色
+   * 底部：从稍深灰色渐变到稍深灰色+米白色混合色
+   */
+  .panel-blur-edge-gray-to-white {
+    background: linear-gradient(
+      to bottom,
+      rgba(247, 248, 250, 1) 0%,
+      rgba(246, 248, 250, 1) 5%,
+      rgba(246, 247, 250, 1) 10%,
+      rgba(245, 247, 250, 1) 15%,
+      rgba(245, 247, 250, 1) 20%,
+      rgba(245, 247, 250, 1) 75%,
+      rgba(248, 249, 251, 1) 80%,
+      rgba(249, 250, 251, 1) 85%,
+      rgba(250, 251, 252, 1) 90%,
+      rgba(251, 251, 252, 1) 95%,
+      rgba(251, 251, 252, 1) 100%
+    );
+  }
+  
+  .dark .panel-blur-edge-gray-to-white {
+    background: linear-gradient(
+      to bottom,
+      rgba(31, 41, 55, 1) 0%,
+      rgba(31, 41, 55, 1) 5%,
+      rgba(31, 41, 55, 1) 10%,
+      rgba(31, 41, 55, 1) 15%,
+      rgba(31, 41, 55, 1) 20%,
+      rgba(31, 41, 55, 1) 75%,
+      rgba(28, 38, 52, 1) 80%,
+      rgba(25, 35, 49, 1) 85%,
+      rgba(23, 33, 47, 1) 90%,
+      rgba(24, 32, 47, 1) 95%,
+      rgba(24, 32, 47, 1) 100%
+    );
+  }
+  
+  /* Highlights: 米白色背景 rgb(253,252,250) - 暖色调
+   * 顶部：从稍深灰色+米白色混合色渐变到米白色
+   * 底部：从米白色渐变到米白色+灰白色混合色
+   */
+  .panel-blur-edge-white-between-gray {
+    background: linear-gradient(
+      to bottom,
+      rgba(251, 251, 252, 1) 0%,
+      rgba(251, 251, 252, 1) 5%,
+      rgba(252, 252, 251, 1) 8%,
+      rgba(252, 252, 250, 1) 12%,
+      rgba(253, 252, 250, 1) 15%,
+      rgba(253, 252, 250, 1) 85%,
+      rgba(252, 252, 251, 1) 88%,
+      rgba(252, 252, 252, 1) 92%,
+      rgba(252, 252, 252, 1) 95%,
+      rgba(252, 252, 252, 1) 100%
+    );
+  }
+  
+  .dark .panel-blur-edge-white-between-gray {
+    background: linear-gradient(
+      to bottom,
+      rgba(24, 32, 47, 1) 0%,
+      rgba(24, 32, 47, 1) 5%,
+      rgba(23, 33, 47, 1) 8%,
+      rgba(20, 28, 43, 1) 12%,
+      rgba(17, 24, 39, 1) 15%,
+      rgba(17, 24, 39, 1) 85%,
+      rgba(20, 28, 43, 1) 88%,
+      rgba(22, 30, 45, 1) 92%,
+      rgba(24, 32, 47, 1) 95%,
+      rgba(24, 32, 47, 1) 100%
+    );
+  }
+  
+  /* Download: 灰白色背景 rgb(251,252,253) - 稍浅灰色
+   * 顶部：从米白色+灰白色混合色渐变到灰白色
+   * 底部：从灰白色渐变到灰白色+暖白色混合色
+   */
+  .panel-blur-edge-gray-between-white {
+    background: linear-gradient(
+      to bottom,
+      rgba(252, 252, 252, 1) 0%,
+      rgba(252, 252, 252, 1) 5%,
+      rgba(251, 252, 252, 1) 8%,
+      rgba(251, 252, 253, 1) 12%,
+      rgba(251, 252, 253, 1) 88%,
+      rgba(252, 252, 252, 1) 92%,
+      rgba(252, 252, 252, 1) 95%,
+      rgba(252, 252, 252, 1) 100%
+    );
+  }
+  
+  .dark .panel-blur-edge-gray-between-white {
+    background: linear-gradient(
+      to bottom,
+      rgba(24, 32, 47, 1) 0%,
+      rgba(26, 35, 50, 1) 5%,
+      rgba(28, 38, 52, 1) 8%,
+      rgba(31, 41, 55, 1) 12%,
+      rgba(31, 41, 55, 1) 88%,
+      rgba(28, 38, 52, 1) 92%,
+      rgba(26, 35, 50, 1) 95%,
+      rgba(24, 32, 47, 1) 100%
+    );
+  }
+  
+  /* About: 暖白色背景 rgb(254,253,251) - 偏暖的白色
+   * 顶部：从灰白色+暖白色混合色渐变到暖白色
+   * 底部：从暖白色渐变到暖白色+黑色混合色（Footer是黑色）
+   */
+  .panel-blur-edge-white-last {
+    background: linear-gradient(
+      to bottom,
+      rgba(252, 252, 252, 1) 0%,
+      rgba(253, 252, 251, 1) 5%,
+      rgba(253, 253, 251, 1) 8%,
+      rgba(254, 253, 251, 1) 12%,
+      rgba(254, 253, 251, 1) 88%,
+      rgba(240, 240, 240, 1) 92%,
+      rgba(220, 220, 220, 1) 95%,
+      rgba(200, 200, 200, 1) 97%,
+      rgba(136, 136, 136, 1) 100%
+    );
+  }
+  
+  .dark .panel-blur-edge-white-last {
+    background: linear-gradient(
+      to bottom,
+      rgba(24, 32, 47, 1) 0%,
+      rgba(22, 30, 45, 1) 5%,
+      rgba(20, 28, 43, 1) 8%,
+      rgba(17, 24, 39, 1) 12%,
+      rgba(17, 24, 39, 1) 88%,
+      rgba(8, 12, 19, 1) 92%,
+      rgba(4, 6, 9, 1) 95%,
+      rgba(2, 3, 4, 1) 97%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+  
+  /* 确保动画组件在背景层（z-index: 0） */
+  /* 动画组件已经有 absolute inset-0，默认 z-index 是 auto，需要明确设置为 0 */
+  
+  /* 确保内容容器在动画之上 */
+  .panel-blur-edge > div.relative {
+    position: relative;
+    z-index: 10 !important;
+  }
+  
   .hero-title {
     position: relative;
     display: inline-block;

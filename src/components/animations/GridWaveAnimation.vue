@@ -1,5 +1,5 @@
 <template>
-  <div ref="containerRef" class="absolute inset-0 overflow-hidden pointer-events-none">
+  <div ref="containerRef" class="absolute inset-0 overflow-hidden pointer-events-none z-0 grid-fade-mask">
     <canvas ref="canvasRef" class="w-full h-full"></canvas>
   </div>
 </template>
@@ -45,9 +45,9 @@ const updateAnimation = () => {
   
   time += waveSpeed * 0.02
   
-  // 绘制网格波浪 - 更透明
-  ctx.strokeStyle = getColor(0.03 + scrollProgress * 0.05)
-  ctx.lineWidth = 1
+  // 绘制网格波浪 - 增强可见性
+  ctx.strokeStyle = getColor(0.08 + scrollProgress * 0.12)
+  ctx.lineWidth = 1.5
   
   for (let i = 0; i <= columns; i++) {
     for (let j = 0; j <= rows; j++) {
@@ -80,7 +80,7 @@ const updateAnimation = () => {
     }
   }
   
-  // 添加光晕效果 - 更透明
+  // 添加光晕效果 - 增强可见性
   const gradient = ctx.createRadialGradient(
     canvas.width / 2,
     canvas.height / 2,
@@ -89,7 +89,8 @@ const updateAnimation = () => {
     canvas.height / 2,
     Math.max(canvas.width, canvas.height) / 2
   )
-  gradient.addColorStop(0, getColor(0.01 * scrollProgress))
+  gradient.addColorStop(0, getColor(0.03 + 0.05 * scrollProgress))
+  gradient.addColorStop(0.5, getColor(0.01 + 0.02 * scrollProgress))
   gradient.addColorStop(1, getColor(0))
   ctx.fillStyle = gradient
   ctx.fillRect(0, 0, canvas.width, canvas.height)
@@ -146,6 +147,27 @@ onUnmounted(() => {
 <style scoped>
 canvas {
   display: block;
+}
+
+.grid-fade-mask {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 10%,
+    black 15%,
+    black 85%,
+    transparent 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 10%,
+    black 15%,
+    black 85%,
+    transparent 90%,
+    transparent 100%
+  );
 }
 </style>
 

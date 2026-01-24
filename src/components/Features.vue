@@ -1,5 +1,5 @@
 <template>
-  <section id="features" class="relative py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden">
+  <section id="features" class="relative py-20 overflow-visible panel-blur-edge panel-blur-edge-gray-to-white">
     <ParticleNetworkAnimation />
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">

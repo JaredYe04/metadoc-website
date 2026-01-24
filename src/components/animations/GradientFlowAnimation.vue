@@ -1,5 +1,5 @@
 <template>
-  <div ref="containerRef" class="absolute inset-0 overflow-hidden pointer-events-none">
+  <div ref="containerRef" class="absolute inset-0 overflow-hidden pointer-events-none z-0">
     <canvas ref="canvasRef" class="w-full h-full"></canvas>
   </div>
 </template>

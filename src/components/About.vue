@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="relative py-20 bg-white dark:bg-gray-900 overflow-hidden">
+  <section id="about" class="relative py-20 overflow-visible panel-blur-edge panel-blur-edge-white-last">
     <GeometricFlowAnimation />
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="about-header mb-8">

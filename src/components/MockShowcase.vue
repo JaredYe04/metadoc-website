@@ -1,5 +1,5 @@
 <template>
-  <section id="mock-showcase" class="relative py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden">
+  <section id="mock-showcase" class="relative py-20 overflow-visible panel-blur-edge panel-blur-edge-gray-first">
     <GridWaveAnimation />
     <div class="relative z-10 max-w-[95%] mx-auto px-2 sm:px-4 lg:px-6">
       <div class="showcase-layout">

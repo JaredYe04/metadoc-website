@@ -1,5 +1,5 @@
 <template>
-  <div ref="containerRef" class="absolute inset-0 overflow-hidden pointer-events-none">
+  <div ref="containerRef" class="absolute inset-0 overflow-hidden pointer-events-none z-0 grid-fade-mask">
     <canvas ref="canvasRef" class="w-full h-full"></canvas>
   </div>
 </template>
@@ -670,5 +670,26 @@ onUnmounted(() => {
 <style scoped>
 canvas {
   display: block;
+}
+
+.grid-fade-mask {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 10%,
+    black 15%,
+    black 85%,
+    transparent 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 10%,
+    black 15%,
+    black 85%,
+    transparent 90%,
+    transparent 100%
+  );
 }
 </style>
