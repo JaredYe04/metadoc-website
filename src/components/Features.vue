@@ -1,6 +1,7 @@
 <template>
-  <section id="features" class="py-20 bg-gray-50 dark:bg-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="features" class="relative py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden">
+    <ParticleNetworkAnimation />
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gradient">
           {{ $t('features.title') }}
@@ -33,6 +34,7 @@
 
 <script setup>
 import { defineComponent, h } from 'vue'
+import ParticleNetworkAnimation from './animations/ParticleNetworkAnimation.vue'
 
 const DocumentIcon = defineComponent({
   render: () => h('svg', {

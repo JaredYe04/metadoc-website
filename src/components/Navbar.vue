@@ -46,7 +46,7 @@
         <div class="flex items-center space-x-4">
           <button
             @click="toggleTheme"
-            class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300"
             :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
           >
             <svg v-if="isDark" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -146,13 +146,8 @@ const isDark = useDark({
 })
 
 const toggleTheme = () => {
+  // useDark 会自动处理 DOM 更新和 localStorage
   isDark.value = !isDark.value
-  // 确保DOM更新
-  if (isDark.value) {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
 }
 
 const showLanguageMenu = ref(false)

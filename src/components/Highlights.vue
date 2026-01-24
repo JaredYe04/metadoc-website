@@ -1,6 +1,7 @@
 <template>
-  <section class="py-20 bg-white dark:bg-gray-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="relative py-20 bg-white dark:bg-gray-900 overflow-hidden">
+    <GradientFlowAnimation />
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gradient">
           {{ $t('highlights.title') }}
@@ -29,6 +30,8 @@
 </template>
 
 <script setup>
+import GradientFlowAnimation from './animations/GradientFlowAnimation.vue'
+
 const highlights = [
   { key: 'intelligent' },
   { key: 'efficient' },

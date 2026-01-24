@@ -1,6 +1,7 @@
 <template>
-  <section id="about" class="py-20 bg-white dark:bg-gray-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="about" class="relative py-20 bg-white dark:bg-gray-900 overflow-hidden">
+    <GeometricFlowAnimation />
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="about-header mb-8">
         <div class="logo-container">
           <img src="/logo.svg" alt="MetaDoc Logo" class="app-logo" />
@@ -72,6 +73,7 @@ import { getLatestRelease } from '../services/github'
 import { i18n } from '../i18n'
 import openSourceLicensesText from '../assets/open-source-licenses.txt?raw'
 import thirdPartyAssetsText from '../assets/third-party-assets.txt?raw'
+import GeometricFlowAnimation from './animations/GeometricFlowAnimation.vue'
 
 const { t } = useI18n()
 

@@ -5,38 +5,38 @@
 </template>
 
 <script setup>
-import { onMounted, watch } from 'vue'
+import { onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { useDark } from '@vueuse/core'
 
+// 统一配置 useDark，让它自动处理系统主题检测和localStorage
+// 如果没有存储的主题，会自动检测系统偏好（prefers-color-scheme）
 const isDark = useDark({
   storageKey: 'theme',
   attribute: 'class',
   valueDark: 'dark',
-  valueLight: ''
+  valueLight: '',
+  selector: 'html'
 })
 
-// 初始化时设置主题
+const router = useRouter()
+const route = useRoute()
+
+// 确保首次加载时正确处理滚动
 onMounted(() => {
-  // 从localStorage读取主题
-  const savedTheme = localStorage.getItem('theme')
-  if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
-    isDark.value = true
-  } else {
-    document.documentElement.classList.remove('dark')
-    isDark.value = false
-  }
+  // 延迟一下确保 DOM 已经渲染
+  setTimeout(() => {
+    if (route.hash) {
+      // 如果有 hash，滚动到对应元素
+      const element = document.querySelector(route.hash)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    } else if (route.path === '/') {
+      // 如果没有 hash，确保滚动到顶部
+      window.scrollTo({ top: 0, behavior: 'auto' })
+    }
+  }, 150)
 })
-
-// 监听主题变化，确保同步
-watch(isDark, (dark) => {
-  if (dark) {
-    document.documentElement.classList.add('dark')
-    localStorage.setItem('theme', 'dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-    localStorage.setItem('theme', 'light')
-  }
-}, { immediate: false })
 </script>
 

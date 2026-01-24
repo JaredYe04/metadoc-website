@@ -1,6 +1,7 @@
 <template>
-  <section id="download" class="py-20 bg-gray-50 dark:bg-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="download" class="relative py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden">
+    <PulseWaveAnimation />
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gradient">
           {{ $t('download.title') }}
@@ -111,9 +112,15 @@ import steamBlack from '@icons/steam-black.svg'
 import steamWhite from '@icons/steam-white.svg'
 import windowsBlack from '@icons/windows-black.svg'
 import windowsWhite from '@icons/windows-white.svg'
+import PulseWaveAnimation from './animations/PulseWaveAnimation.vue'
 
 const { t } = useI18n()
-const isDark = useDark({ storageKey: 'theme', attribute: 'class' })
+const isDark = useDark({ 
+  storageKey: 'theme', 
+  attribute: 'class',
+  valueDark: 'dark',
+  valueLight: ''
+})
 const loading = ref(true)
 const error = ref(false)
 const latestRelease = ref(null)

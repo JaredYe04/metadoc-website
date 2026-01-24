@@ -1,6 +1,7 @@
 <template>
-  <section id="mock-showcase" class="py-20 bg-gray-50 dark:bg-gray-800">
-    <div class="max-w-[95%] mx-auto px-2 sm:px-4 lg:px-6">
+  <section id="mock-showcase" class="relative py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden">
+    <GridWaveAnimation />
+    <div class="relative z-10 max-w-[95%] mx-auto px-2 sm:px-4 lg:px-6">
       <div class="showcase-layout">
         <!-- 左侧：标题和说明 -->
         <div class="showcase-text">
@@ -30,6 +31,7 @@
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useI18n } from 'vue-i18n'
 import MockMain from './mock/Main.vue'
+import GridWaveAnimation from './animations/GridWaveAnimation.vue'
 
 const { t } = useI18n()
 
