@@ -52,12 +52,22 @@
     "version": "Version",
     "releaseDate": "Release Date",
     "download": "Download",
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "macIcon": "",
+    "linuxIcon": "",
+    "allDownloads": "All downloads",
+    "viewLatestDetails": "View latest release details",
     "github": "GitHub Repository",
     "steam": "Steam Store",
     "comingSoon": "Coming Soon",
     "loading": "Loading...",
     "error": "Failed to load",
-    "systemRequirement": "System Requirements: 64-bit Windows 10 or later"
+    "systemRequirement": "System requirements",
+    "systemRequirementWindows": "64-bit Windows 10+",
+    "systemRequirementMac": "macOS 11+ · Apple Silicon",
+    "systemRequirementLinux": "64-bit Linux"
   },
   "nav": {
     "home": "Home",

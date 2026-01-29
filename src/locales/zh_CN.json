@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "MetaDoc",
-    "subtitle": "基于LLM Agent的智能文字处理软件",
+    "subtitle": "MetaDoc - 基于LLM Agent的智能文字处理软件",
     "description": "面向学生与IT从业者的多功能智能文档处理平台",
     "download": "立即下载",
     "learnMore": "了解更多"
@@ -52,12 +52,22 @@
     "version": "版本",
     "releaseDate": "发布日期",
     "download": "下载",
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "macIcon": "",
+    "linuxIcon": "",
+    "allDownloads": "全部下载",
+    "viewLatestDetails": "查看最新版详情",
     "github": "GitHub仓库",
     "steam": "Steam商店",
     "comingSoon": "即将推出",
     "loading": "加载中...",
     "error": "加载失败",
-    "systemRequirement": "系统要求：64位 Windows 10 及以上系统"
+    "systemRequirement": "系统要求",
+    "systemRequirementWindows": "64 位 Windows 10+",
+    "systemRequirementMac": "macOS 11+ · Apple Silicon",
+    "systemRequirementLinux": "64 位 Linux"
   },
   "nav": {
     "home": "首页",

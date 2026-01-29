@@ -31,27 +31,111 @@
               <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100">
                 {{ latestRelease.version }}
               </h3>
-              <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-2">
+              <p v-if="latestRelease.publishedAt" class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-2">
                 {{ formatDate(latestRelease.publishedAt) }}
               </p>
             </div>
-            <a
-              v-if="latestRelease.downloadUrl"
-              :href="latestRelease.downloadUrl"
-              target="_blank"
-              class="flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 w-full sm:w-auto justify-center"
+            <div
+              class="flex flex-wrap gap-3 w-full sm:w-auto justify-center sm:justify-end"
+              @mouseleave="hoveredPlatform = null"
             >
-              <img :src="windowsWhiteIcon" alt="Windows" class="w-5 h-5" />
-              <span>{{ $t('download.download') }}</span>
-            </a>
+              <a
+                v-if="platformUrl('windows')"
+                :href="platformUrl('windows')"
+                target="_blank"
+                rel="noopener noreferrer"
+                :class="[
+                  'flex items-center space-x-2 px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm shadow-md transform hover:scale-105 transition-all duration-200',
+                  isHighlighted('windows')
+                    ? 'bg-primary-600 hover:bg-primary-700 text-white shadow-lg hover:shadow-xl'
+                    : 'bg-gray-200 hover:bg-gray-300 text-gray-600 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-200'
+                ]"
+                @mouseenter="hoveredPlatform = 'windows'"
+              >
+                <img
+                  :src="isHighlighted('windows') ? windowsWhiteIcon : (isDark ? windowsWhiteIcon : windowsBlackIcon)"
+                  alt="Windows"
+                  :class="['w-5 h-5', !isHighlighted('windows') && !isDark && 'opacity-70']"
+                />
+                <span>{{ $t('download.windows') }}</span>
+              </a>
+              <a
+                v-if="platformUrl('mac')"
+                :href="platformUrl('mac')"
+                target="_blank"
+                rel="noopener noreferrer"
+                :class="[
+                  'flex items-center space-x-2 px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm shadow-md transform hover:scale-105 transition-all duration-200',
+                  isHighlighted('mac')
+                    ? 'bg-primary-600 hover:bg-primary-700 text-white shadow-lg hover:shadow-xl'
+                    : 'bg-gray-200 hover:bg-gray-300 text-gray-600 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-200'
+                ]"
+                @mouseenter="hoveredPlatform = 'mac'"
+              >
+                <img
+                  :src="appleIcon"
+                  alt="macOS"
+                  :class="['w-5 h-5', !isHighlighted('mac') && !isDark && 'download-btn-muted-icon']"
+                />
+                <span>{{ $t('download.mac') }}</span>
+              </a>
+              <a
+                v-if="platformUrl('linux')"
+                :href="platformUrl('linux')"
+                target="_blank"
+                rel="noopener noreferrer"
+                :class="[
+                  'flex items-center space-x-2 px-4 sm:px-5 py-2.5 rounded-lg font-semibold text-sm shadow-md transform hover:scale-105 transition-all duration-200',
+                  isHighlighted('linux')
+                    ? 'bg-primary-600 hover:bg-primary-700 text-white shadow-lg hover:shadow-xl'
+                    : 'bg-gray-200 hover:bg-gray-300 text-gray-600 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-gray-200'
+                ]"
+                @mouseenter="hoveredPlatform = 'linux'"
+              >
+                <img
+                  :src="linuxIcon"
+                  alt="Linux"
+                  :class="['w-5 h-5', !isHighlighted('linux') && !isDark && 'download-btn-muted-icon']"
+                />
+                <span>{{ $t('download.linux') }}</span>
+              </a>
+              <a
+                v-if="!hasAnyPlatformUrl && latestRelease.downloadUrl"
+                :href="latestRelease.downloadUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center space-x-2 px-4 sm:px-6 py-2.5 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-semibold text-sm shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+              >
+                <span>{{ $t('download.download') }}</span>
+              </a>
+            </div>
           </div>
           
-          <!-- 系统要求 -->
+          <!-- 系统要求（Win / Mac / Linux）同一行等宽；查看详情另起一行 -->
           <div v-if="latestRelease" class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-            <p class="text-sm text-gray-600 dark:text-gray-400 flex items-center space-x-2">
-              <img :src="windowsIcon" alt="Windows" class="w-4 h-4" />
-              <span>{{ $t('download.systemRequirement') }}</span>
-            </p>
+            <div class="flex gap-3 text-sm text-gray-600 dark:text-gray-400">
+              <span v-if="platformUrl('windows')" class="flex flex-1 min-w-0 items-center gap-1.5">
+                <img :src="windowsIcon" alt="Windows" class="w-4 h-4 flex-shrink-0" />
+                <span class="truncate">{{ $t('download.systemRequirementWindows') }}</span>
+              </span>
+              <span v-if="platformUrl('mac')" class="flex flex-1 min-w-0 items-center gap-1.5">
+                <img :src="appleIcon" alt="macOS" class="w-4 h-4 flex-shrink-0 requirement-row-icon-apple" />
+                <span class="truncate">{{ $t('download.systemRequirementMac') }}</span>
+              </span>
+              <span v-if="platformUrl('linux')" class="flex flex-1 min-w-0 items-center gap-1.5">
+                <img :src="linuxIcon" alt="Linux" class="w-4 h-4 flex-shrink-0" />
+                <span class="truncate">{{ $t('download.systemRequirementLinux') }}</span>
+              </span>
+            </div>
+            <a
+              v-if="latestRelease.htmlUrl"
+              :href="latestRelease.htmlUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-3 inline-block text-sm text-primary-600 dark:text-primary-400 hover:underline"
+            >
+              {{ $t('download.viewLatestDetails') }}
+            </a>
           </div>
         </div>
         
@@ -112,6 +196,8 @@ import steamBlack from '@icons/steam-black.svg'
 import steamWhite from '@icons/steam-white.svg'
 import windowsBlack from '@icons/windows-black.svg'
 import windowsWhite from '@icons/windows-white.svg'
+import appleIcon from '@icons/apple.svg'
+import linuxIcon from '@icons/linux.svg'
 import PulseWaveAnimation from './animations/PulseWaveAnimation.vue'
 
 const { t } = useI18n()
@@ -125,10 +211,29 @@ const loading = ref(true)
 const error = ref(false)
 const latestRelease = ref(null)
 
+// 根据 UA 推断当前操作系统，默认高亮对应下载按钮
+const detectedPlatform = ref(null)
+// 鼠标悬停时高亮该按钮，取消默认高亮
+const hoveredPlatform = ref(null)
+function detectPlatform() {
+  if (typeof navigator === 'undefined') return null
+  const ua = navigator.userAgent.toLowerCase()
+  if (/mac|iphone|ipad/.test(ua)) return 'mac'
+  if (/linux|android/.test(ua)) return 'linux'
+  if (/win|windows/.test(ua)) return 'windows'
+  return null
+}
+/** 当前应高亮的平台：有悬停则高亮悬停项，否则高亮用户环境 */
+function isHighlighted(platform) {
+  if (hoveredPlatform.value !== null) return hoveredPlatform.value === platform
+  return detectedPlatform.value === platform
+}
+
 const githubIcon = computed(() => isDark.value ? githubWhite : githubBlack)
 const steamIcon = computed(() => isDark.value ? steamWhite : steamBlack)
 const windowsIcon = computed(() => isDark.value ? windowsWhite : windowsBlack)
 const windowsWhiteIcon = computed(() => windowsWhite)
+const windowsBlackIcon = computed(() => windowsBlack)
 
 const formatDate = (dateString) => {
   if (!dateString) return ''
@@ -141,7 +246,15 @@ const formatDate = (dateString) => {
   })
 }
 
+const downloadByPlatform = () => latestRelease.value?.downloadByPlatform || {}
+const platformUrl = (platform) => downloadByPlatform()[platform] || null
+const hasAnyPlatformUrl = () => {
+  const p = downloadByPlatform()
+  return !!(p.windows || p.mac || p.linux)
+}
+
 onMounted(async () => {
+  detectedPlatform.value = detectPlatform()
   try {
     latestRelease.value = await getLatestRelease()
     // 如果版本是默认值，显示错误状态
@@ -156,4 +269,21 @@ onMounted(async () => {
   }
 })
 </script>
+
+<style scoped>
+/* 非高亮下载按钮在浅色模式下使用深色图标，保证在浅灰背景上可见 */
+.download-btn-muted-icon {
+  filter: brightness(0);
+  opacity: 0.75;
+}
+/* 系统要求行：Apple 图标为白色，浅色模式下转为深色以匹配文字 */
+.requirement-row-icon-apple {
+  filter: brightness(0);
+  opacity: 0.8;
+}
+.dark .requirement-row-icon-apple {
+  filter: none;
+  opacity: 1;
+}
+</style>
 
