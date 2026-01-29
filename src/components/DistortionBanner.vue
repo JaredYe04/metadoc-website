@@ -31,7 +31,7 @@ const COLS_B = 13
 const ROWS_B = 6
 const COLS_C = 32
 const ROWS_C = 24
-const PULL_NEAR_MOUSE = 0.022
+const PULL_NEAR_MOUSE = 0.012
 const PULL_FAR_FROM_MOUSE = 0.11
 const PULL_FACTOR_RECOVER = 0.065
 const DAMPING = 0.78
@@ -43,7 +43,7 @@ const INFLUENCE_RADIUS = 80
 const DISPLACE_SCALE_MIN = 0.6
 const DISPLACE_SCALE_MAX = 1.4
 const SPEED_SCALE_MIN = 1.2
-const SPEED_SCALE_MAX = 1.8
+const SPEED_SCALE_MAX = 2.8
 
 let canvas
 let ctx
