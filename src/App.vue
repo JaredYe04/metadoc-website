@@ -1,13 +1,20 @@
 <template>
   <div class="min-h-screen bg-white dark:bg-gray-900">
     <router-view />
+    <UserFeedbackDialog v-model="showFeedbackDialog" />
   </div>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted, provide } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useDark } from '@vueuse/core'
+import UserFeedbackDialog from './components/UserFeedbackDialog.vue'
+
+const showFeedbackDialog = ref(false)
+provide('openFeedbackDialog', () => {
+  showFeedbackDialog.value = true
+})
 
 // 统一配置 useDark，让它自动处理系统主题检测和localStorage
 // 如果没有存储的主题，会自动检测系统偏好（prefers-color-scheme）

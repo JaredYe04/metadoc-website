@@ -21,6 +21,17 @@
 2. 构建项目
 3. 部署到GitHub Pages
 
+### 用户反馈（可选）
+
+若需在官网启用「用户反馈」功能，请在仓库 **Settings > Secrets and variables > Actions** 中配置（Secret 名称不能以 `GITHUB_` 开头）：
+
+- `FEEDBACK_TOKEN`：用于触发 workflow_dispatch，需 **workflow** 权限
+- `FEEDBACK_GIST_TOKEN`：用于创建 Gist 存正文与附件，需 **gist** 权限
+- `FEEDBACK_REPO_OWNER`：仓库 owner（如 `JaredYe04`）
+- `FEEDBACK_REPO`：仓库名（如 `MetaDoc`）
+
+未配置时，反馈按钮仍可打开对话框，但提交会提示未配置 Token。
+
 ### 手动触发
 
 也可以在Actions标签页手动触发部署工作流。

@@ -78,6 +78,11 @@ jobs:
           npm run build
         env:
           NODE_ENV: production
+          # 官网用户反馈：从仓库 Secrets 注入（名称不能以 GITHUB_ 开头）
+          VITE_GITHUB_FEEDBACK_TOKEN: ${{ secrets.FEEDBACK_TOKEN }}
+          VITE_GITHUB_FEEDBACK_GIST_TOKEN: ${{ secrets.FEEDBACK_GIST_TOKEN }}
+          VITE_GITHUB_FEEDBACK_REPO_OWNER: ${{ secrets.FEEDBACK_REPO_OWNER }}
+          VITE_GITHUB_FEEDBACK_REPO: ${{ secrets.FEEDBACK_REPO }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

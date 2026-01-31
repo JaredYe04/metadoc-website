@@ -96,6 +96,16 @@
               </div>
             </Transition>
           </div>
+          <!-- 用户反馈（语言切换右侧） -->
+          <el-tooltip :content="$t('nav.feedback')" placement="bottom">
+            <button
+              @click="openFeedbackDialog?.()"
+              class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              :aria-label="$t('nav.feedback')"
+            >
+              <img :src="feedbackIcon" alt="Feedback" class="w-5 h-5" />
+            </button>
+          </el-tooltip>
         </div>
       </div>
     </div>
@@ -130,12 +140,16 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, inject, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useDark, useToggle } from '@vueuse/core'
+import { useDark } from '@vueuse/core'
 import { setLocale } from '../i18n'
 import languageBlack from '@icons/language-black.svg'
 import languageWhite from '@icons/language-white.svg'
+import feedbackBlack from '@icons/feedback-black.svg'
+import feedbackWhite from '@icons/feedback-white.svg'
+
+const openFeedbackDialog = inject('openFeedbackDialog', null)
 
 const { t, locale } = useI18n()
 const isDark = useDark({ 
@@ -158,6 +172,7 @@ const currentLocale = ref(locale.value)
 const isLogoShaking = ref(false)
 
 const languageIcon = computed(() => isDark.value ? languageWhite : languageBlack)
+const feedbackIcon = computed(() => isDark.value ? feedbackWhite : feedbackBlack)
 
 const languages = [
   { value: 'zh_CN', label: '中文' },
