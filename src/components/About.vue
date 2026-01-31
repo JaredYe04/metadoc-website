@@ -20,6 +20,10 @@
             <span class="env-label">{{ $t('about.buildEnvironment') }}:</span>
             <span class="env-value">{{ buildEnvironment }}</span>
           </div>
+          <div class="qq-group">
+            <span class="qq-label">{{ $t('about.officialQQGroup') }}:</span>
+            <span class="qq-value">1079841705</span>
+          </div>
         </div>
       </div>
 
@@ -187,7 +191,8 @@ onMounted(async () => {
 
 .version-info,
 .release-date,
-.build-environment {
+.build-environment,
+.qq-group {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -197,26 +202,30 @@ onMounted(async () => {
 
 .dark .version-info,
 .dark .release-date,
-.dark .build-environment {
+.dark .build-environment,
+.dark .qq-group {
   color: #9ca3af;
 }
 
 .version-label,
 .date-label,
-.env-label {
+.env-label,
+.qq-label {
   font-weight: 500;
 }
 
 .version-value,
 .date-value,
-.env-value {
+.env-value,
+.qq-value {
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   color: var(--text-color-primary, #1f2937);
 }
 
 .dark .version-value,
 .dark .date-value,
-.dark .env-value {
+.dark .env-value,
+.dark .qq-value {
   color: #f9fafb;
 }
 

@@ -135,6 +135,7 @@
     "buildEnvironment": "构建环境",
     "buildEnvironmentDev": "开发环境",
     "buildEnvironmentRelease": "发布环境",
+    "officialQQGroup": "官方 QQ 群",
     "updateSettings": "更新设置",
     "autoCheckUpdates": "自动检查更新",
     "updateChannel": "更新渠道",

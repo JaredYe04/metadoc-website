@@ -135,6 +135,7 @@
     "buildEnvironment": "Build Environment",
     "buildEnvironmentDev": "Development",
     "buildEnvironmentRelease": "Release",
+    "officialQQGroup": "Official QQ Group",
     "updateSettings": "Update Settings",
     "autoCheckUpdates": "Auto Check Updates",
     "updateChannel": "Update Channel",

@@ -2,7 +2,8 @@
   <el-dialog
     :model-value="modelValue"
     :title="$t('userFeedback.title')"
-    width="720px"
+    width="960px"
+    top="2%"
     class="feedback-dialog"
     destroy-on-close
     append-to-body
@@ -469,6 +470,7 @@ watch(isDark, () => {
 <style scoped>
 .feedback-dialog :deep(.el-dialog) {
   border-radius: 16px;
+  margin-top: 0;
 }
 .feedback-dialog :deep(.el-dialog__header) {
   padding: 16px 20px;
