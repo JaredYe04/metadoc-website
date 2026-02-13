@@ -5,7 +5,7 @@
       <vue-tree
         ref="treeRef"
         class="outline-tree-container"
-        style="width: 100%; height: 100%; border: 1px solid gray; border-radius: 12px;"
+        style="width: 100%; height: 100%; border-radius: 12px;"
         :style="{ backgroundColor: currentTheme.background }"
         :dataset="treeData"
         :config="treeConfig"

@@ -49,13 +49,13 @@
       </div>
     </div>
     
-    <!-- 窗口控制按钮 (最右侧，移动端隐藏) -->
+    <!-- 窗口控制按钮 (最右侧，移动端隐藏)，使用主题图标 -->
     <div class="window-controls">
       <div class="window-control-btn">
-        <el-icon><Minus /></el-icon>
+        <img class="window-control-icon" :src="currentTheme.MinimizeIcon" alt="" aria-hidden="true" />
       </div>
       <div class="window-control-btn">
-        <el-icon><FullScreen /></el-icon>
+        <img class="window-control-icon" :src="currentTheme.MaximizeIcon" alt="" aria-hidden="true" />
       </div>
       <div class="window-control-btn window-control-btn--close">
         <el-icon><Close /></el-icon>
@@ -67,7 +67,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { Minus, FullScreen, Close, Plus } from '@element-plus/icons-vue'
+import { Close, Plus } from '@element-plus/icons-vue'
 import { useMockTheme, mixColors } from './utils/theme'
 
 const { t } = useI18n()
@@ -163,13 +163,16 @@ const handleTabChange = (tabId) => {
 <style scoped>
 .main-tabs-wrapper {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   height: 40px;
+  max-height: 40px;
+  overflow: hidden;
   background-color: v-bind('tabsContainerBackgroundColor');
-  border-bottom: 1px solid v-bind('borderColor');
+  box-shadow: inset 0 -1px 0 0 v-bind('borderColor');
   user-select: none;
   -webkit-user-select: none;
   position: relative;
+  box-sizing: border-box;
 }
 
 .tabs-container {
@@ -177,20 +180,31 @@ const handleTabChange = (tabId) => {
   display: flex;
   align-items: center;
   min-width: 0;
+  min-height: 0;
+  max-height: 40px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
   position: relative;
   gap: 0;
+  box-sizing: border-box;
 }
 
 .main-tabs {
   flex: 1;
+  height: 100%;
+  max-height: 40px;
+  overflow: hidden;
+  border: none;
   border-bottom: none;
   min-width: 0;
   max-width: 100%;
   background-color: v-bind('tabsContainerBackgroundColor');
   position: relative;
   z-index: 1;
-  margin-right: 0;
-  padding-right: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .main-tabs :deep(.el-tabs__nav) {
@@ -300,7 +314,7 @@ const handleTabChange = (tabId) => {
   transition: background-color 0.15s ease, color 0.15s ease;
   margin-bottom: 0 !important;
   margin-top: 0 !important;
-  border-radius: 6px 6px 0 0;
+  /* border-radius: 6px 6px 0 0; */
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -315,14 +329,13 @@ const handleTabChange = (tabId) => {
 }
 
 .main-tabs :deep(.el-tabs__header) {
-  margin-bottom: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-bottom: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  height: 40px;
-  padding-top: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 40px !important;
+  max-height: 40px !important;
+  border: none !important;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .main-tabs :deep(.el-tabs__nav-scroll) {
@@ -347,7 +360,7 @@ const handleTabChange = (tabId) => {
 .main-tabs :deep(.el-tabs__item.is-active) {
   background-color: v-bind('tabItemActiveBackgroundColor');
   color: var(--el-color-primary);
-  border-radius: 6px 6px 0 0;
+  /* border-radius: 6px 6px 0 0; */
   font-weight: 600;
 }
 
@@ -402,10 +415,19 @@ const handleTabChange = (tabId) => {
 .window-controls {
   display: flex;
   align-items: center;
+  align-self: stretch;
   height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  margin: 0;
   padding: 0 4px;
-  border-left: 1px solid v-bind('borderColor');
+  border: none;
+  border-left: 1px solid color-mix(in srgb, v-bind('borderColor') 12%, transparent);
   gap: 4px;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  line-height: 0;
 }
 
 @media (max-width: 767px) {
@@ -422,9 +444,14 @@ const handleTabChange = (tabId) => {
 .window-control-btn {
   width: 32px;
   height: 32px;
+  min-height: 32px;
+  max-height: 32px;
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -433,6 +460,8 @@ const handleTabChange = (tabId) => {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  box-sizing: border-box;
+  line-height: 0;
 }
 
 .window-control-btn:hover {
@@ -446,14 +475,29 @@ const handleTabChange = (tabId) => {
 
 .window-control-btn .el-icon {
   font-size: 16px;
+  line-height: 0;
+  display: block;
+}
+
+.window-control-btn .window-control-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .new-tab-button {
   width: 32px;
   height: 32px;
+  min-height: 32px;
+  max-height: 32px;
+  margin: 0 0 0 20px;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -463,12 +507,12 @@ const handleTabChange = (tabId) => {
   -moz-user-select: none;
   -ms-user-select: none;
   flex-shrink: 0;
-  margin-left: 20px;
-  margin-right: 0;
   background-color: v-bind('tabItemBackgroundColor');
   position: relative;
   z-index: 10;
-  padding: 0;
+  box-sizing: border-box;
+  line-height: 0;
+  overflow: hidden;
 }
 
 .new-tab-button:hover {
@@ -478,6 +522,8 @@ const handleTabChange = (tabId) => {
 .new-tab-button .el-icon {
   font-size: 16px;
   font-weight: 600;
+  line-height: 0;
+  display: block;
 }
 </style>
 

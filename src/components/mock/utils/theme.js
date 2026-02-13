@@ -41,7 +41,10 @@ export const useMockTheme = () => {
         VisualIcon: new URL('../../../assets/icons/visual-white.svg', import.meta.url).href,
         AgentIcon: new URL('../../../assets/icons/agent-white.svg', import.meta.url).href,
         ProofreadIcon: new URL('../../../assets/icons/proofread-white.svg', import.meta.url).href,
-        MetaIcon: new URL('../../../assets/icons/meta-white.svg', import.meta.url).href
+        MetaIcon: new URL('../../../assets/icons/meta-white.svg', import.meta.url).href,
+        MinimizeIcon: new URL('../../../assets/icons/minimize-white.svg', import.meta.url).href,
+        MaximizeIcon: new URL('../../../assets/icons/maximize-white.svg', import.meta.url).href,
+        RestoreIcon: new URL('../../../assets/icons/restore-white.svg', import.meta.url).href
       }
     } else {
       return {
@@ -72,7 +75,10 @@ export const useMockTheme = () => {
         VisualIcon: new URL('../../../assets/icons/visual-black.svg', import.meta.url).href,
         AgentIcon: new URL('../../../assets/icons/agent-black.svg', import.meta.url).href,
         ProofreadIcon: new URL('../../../assets/icons/proofread-black.svg', import.meta.url).href,
-        MetaIcon: new URL('../../../assets/icons/meta-black.svg', import.meta.url).href
+        MetaIcon: new URL('../../../assets/icons/meta-black.svg', import.meta.url).href,
+        MinimizeIcon: new URL('../../../assets/icons/minimize-black.svg', import.meta.url).href,
+        MaximizeIcon: new URL('../../../assets/icons/maximize-black.svg', import.meta.url).href,
+        RestoreIcon: new URL('../../../assets/icons/restore-black.svg', import.meta.url).href
       }
     }
   })

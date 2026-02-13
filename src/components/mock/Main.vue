@@ -238,8 +238,9 @@ onBeforeUnmount(() => {
 .side-menu {
   width: fit-content;
   min-width: 64px;
-  background-color: var(--el-bg-color, #ffffff);
-  border-right: 1px solid var(--el-border-color-lighter, #f0f0f0);
+  width: 64px;
+  /* background-color: var(--el-bg-color, #ffffff); */
+  /* border-right: 1px solid var(--el-border-color-lighter, #f0f0f0); */
   overflow: hidden;
 }
 
